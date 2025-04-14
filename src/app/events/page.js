@@ -1,4 +1,4 @@
-import HeroSection from "@/components/heroSecton";
+import Events from "@/components/events";
 import NavBar from "@/components/navBar";
 
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <NavBar/>
-      <HeroSection/>
+      <Events/>
     </>
   );
 }

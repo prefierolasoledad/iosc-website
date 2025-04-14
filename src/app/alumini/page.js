@@ -1,4 +1,4 @@
-import HeroSection from "@/components/heroSecton";
+import Alumini from "@/components/alumini";
 import NavBar from "@/components/navBar";
 
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <NavBar/>
-      <HeroSection/>
+      <Alumini/>
     </>
   );
 }
