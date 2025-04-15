@@ -1,28 +1,10 @@
-import LOGO from "@/assets/bg-design.png";
-
-//src\assets\hersosection-image.png
 import HEROSECTIONIMAGE from "@/assets/hersosection-image.png"
+import STARS from "@/assets/stars.png";
+import './sprinkleAnimation.css';
 
 const HeroSection=()=>{
     return(
-        <section className="w-full h-[100vh] bg-black flex flex-row justify-center">
-            {/* <div className="w-[50%] h-full bg-no-repeat bg-contain bg-left">
-
-            </div>
-            <div className="w-[50%] h-full flex flex-row">
-                <div
-                    className="w-40 h-40 bg-no-repeat bg-contain bg-left"
-                    style={{
-                        backgroundImage: `url(${LOGO.src})`,
-                    }}
-                />
-                <div
-                    className="w-40 h-40 bg-no-repeat bg-contain bg-left"
-                    style={{
-                        backgroundImage: `url(${LOGO.src})`,
-                    }}
-                />
-            </div> */}
+        <section className="w-full h-[100vh] overflow-hidden bg-black flex flex-row justify-center">
             <div className="w-[50%] h-full bg-no-repeat bg-contain flex justify-center"
                 style={{
                     backgroundImage: `url(${HEROSECTIONIMAGE.src})`,
@@ -32,9 +14,33 @@ const HeroSection=()=>{
             />
 
             <div className="w-[50%] h-full bg-no-repeat pt-14 text-white" >
-                <h1 className="text-sky-400 text-9xl font-extrabold">
-                    WE ARE IOSC-EDC
-                </h1>
+                <div className="relative flex items-center justify-center w-full ml-[-12%]">
+                    {/* Left Star Background */}
+                    <div
+                    className="absolute left-[-120px] mt-10 w-70 h-70 z-0 animate-sprinkle filter brightness-150"
+                    style={{
+                        backgroundImage: `url(${STARS.src})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'contain',
+                        opacity: 0.8,
+                    }}
+                    />
+
+                    {/* Right Star Background */}
+                    <div
+                    className="absolute right-[-140px] mt-4 w-70 h-70 z-0 animate-sprinkle filter brightness-150 delay-1000"
+                    style={{
+                        backgroundImage: `url(${STARS.src})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'contain',
+                        opacity: 0.8,
+                    }}
+                    />
+                    {/* Main Heading */}
+                    <h1 className="text-sky-400 text-9xl font-extrabold text-center relative z-10">
+                        WE ARE IOSC-EDC
+                    </h1>
+                </div>
                 <p className="pt-10 pr-10 text-lg">
                     The Intel OneAPI Student Club (IoSC)  is a community full of people who love technology oriented towards innovative 
                     development in various fields-from design, system integration, game development, robotics, web, management, etc-and 

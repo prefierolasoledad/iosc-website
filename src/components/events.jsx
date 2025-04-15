@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from "react";
+import STARS from "@/assets/stars.png";
+import './sprinkleAnimation.css';
 
 const Events = () => {
   const [event, setEvent] = useState("VESPERA’24");
@@ -26,9 +28,28 @@ const Events = () => {
 
   return (
     <section className="bg-black w-full min-h-screen pt-10">
-      <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10">
-        EVENTS
-      </h2>
+      <div className="w-full flex items-center justify-center">
+        <div className="w-[400px] relative flex items-center justify-center">
+          <div
+            className="absolute left-[-50px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+            style={{
+              backgroundImage: `url(${STARS.src})`,
+            }}
+          />
+
+          <div
+            className="absolute right-[-70px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+            style={{
+              backgroundImage: `url(${STARS.src})`,
+            }}
+          />
+
+          <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+            EVENTS
+          </h2>
+        </div>
+      </div>
+
 
       <div className="w-full flex flex-col items-center">
         <div className="w-[90%] md:w-[80%] h-[400px] rounded-2xl bg-gray-400 grid grid-cols-1 md:grid-cols-3 items-center gap-4 px-4 py-6">
