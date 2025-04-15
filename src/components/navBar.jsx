@@ -45,10 +45,14 @@ const NavBar = () => {
             </Link>
         </p>
         <p className="mb-5">
-            Team
+            <Link href="/team">
+                Team
+            </Link>
         </p>
         <p className="mb-5">
-            Projects
+            <Link href="/projects">
+                Projects
+            </Link>
         </p>
         <p className="mb-5">
             Blogs
