@@ -1,4 +1,6 @@
 import React from 'react';
+import STARS from "@/assets/stars.png";
+import './sprinkleAnimation.css';
 
 function Blogs() {
   const blogs = [
@@ -26,9 +28,26 @@ function Blogs() {
 
   return (
     <section className="w-full min-h-[100vh] bg-black pt-10 text-white">
-      <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10">
-        BLOGS
-      </h2>
+      <div className="w-full flex items-center justify-center">
+          <div className="w-[400px] relative flex items-center justify-center">
+            <div
+              className="absolute left-[-50px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+              style={{
+                backgroundImage: `url(${STARS.src})`,
+              }}
+            />    
+          <div
+            className="absolute right-[-70px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+            style={{
+              backgroundImage: `url(${STARS.src})`,
+            }}
+          />
+                  
+          <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+            BLOGS
+          </h2>
+        </div>
+      </div>
       <div className="flex flex-row items-start justify-between px-10">
         {/* Left: Featured Blog Box */}
         <div className="relative w-120 h-[400px]">

@@ -32,4 +32,31 @@
     transform: rotateY(180deg);
     background-color: black;
   }
+
+  
+  @keyframes sprinkle {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-sprinkle {
+    animation: sprinkle 2.8s ease-in-out infinite;
+  }
+  
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .filter {
+    filter: 
+      drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)) 
+      drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)) 
+      drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+  }
   

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import STARS from "@/assets/stars.png";
+import './sprinkleAnimation.css';
 
 const Connector = ({ direction }) => {
     return (
@@ -181,9 +183,28 @@ const Teams = () => {
 
     return (
         <section className="w-full h-[800vh] bg-black pt-10 flex flex-col items-center">
-            <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10">
-                Team
-            </h2>
+            <div className="w-full flex items-center justify-center">
+                <div className="w-[400px] relative flex items-center justify-center">
+                    <div
+                        className="absolute left-[-50px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+                        style={{
+                          backgroundImage: `url(${STARS.src})`,
+                        }}
+                    />
+            
+                    <div
+                        className="absolute right-[-70px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+                        style={{
+                          backgroundImage: `url(${STARS.src})`,
+                        }}
+                    />
+            
+                    <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+                        TEAM
+                    </h2>
+                </div>
+            </div>
+            
             <div className="w-[80%] h-[300vh] mt-10 mb-10">
                 {sections.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>

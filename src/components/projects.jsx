@@ -1,5 +1,7 @@
 import React from 'react'
 import { FaGithub } from "react-icons/fa";
+import STARS from "@/assets/stars.png";
+import './sprinkleAnimation.css';
 
 const projects = [
   {
@@ -32,9 +34,27 @@ const projects = [
 function Projects() {
   return (
     <section className='w-full min-h-[100vh] flex flex-col bg-black pt-10 items-center'>
-      <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10">
-        Projects
-      </h2>
+      <div className="w-full flex items-center justify-center">
+        <div className="w-[400px] relative flex items-center justify-center">
+          <div
+            className="absolute left-[-50px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+            style={{
+              backgroundImage: `url(${STARS.src})`,
+            }}
+          />
+                  
+          <div
+            className="absolute right-[-70px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+            style={{
+              backgroundImage: `url(${STARS.src})`,
+            }}
+          />
+                  
+          <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+            PROJECTS
+          </h2>
+        </div>
+      </div>
 
       <div className='w-[83.5%] overflow-x-auto scrollbar-hide'>
         <div className='w-max h-[500px] flex gap-4 bg-gray-300 pt-5 pb-5 pl-5 pr-5'>
