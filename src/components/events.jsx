@@ -9,7 +9,7 @@ const Events = () => {
 
   const events = [
     {
-      title: "VESPERA’24",
+      title: "REACT BOOT CAMP",
       images: [
         "/images/vespera1.jpg",
         "/images/vespera2.jpg"
@@ -20,6 +20,55 @@ const Events = () => {
       images: [
         "/images/azintek1.jpg",
         "/images/azintek2.jpg"
+      ],
+    },
+    {
+      title: "INTEL DEV CLOUD",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
+      ],
+    },
+    {
+      title: "GEN AI WORKSHOP",
+      images: [
+        "/images/azintek1.jpg",
+        "/images/azintek2.jpg"
+      ],
+    },
+    {
+      title: "SHARK TANK",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
+      ],
+    },
+    {
+      title: "STUDENT OF THE YEAR",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
+      ],
+    },
+    {
+      title: "VESPERA’24",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
+      ],
+    },
+    {
+      title: "BHASHA BANDHU",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
+      ],
+    },
+    {
+      title: "GIT-TOGETHER",
+      images: [
+        "/images/vespera1.jpg",
+        "/images/vespera2.jpg"
       ],
     },
   ];
@@ -72,7 +121,7 @@ const Events = () => {
         </div>
 
         {/* Selector Bar */}
-        <div className="w-[60%] mt-16 h-1 bg-gray-400  flex items-center justify-around">
+        <div className="w-[90%] mt-16 h-1 bg-gray-400  flex items-center justify-around">
           {events.map((e, idx) => (
             <div
               key={idx}
@@ -85,9 +134,9 @@ const Events = () => {
         </div>
 
         {/* Labels */}
-        <div className="w-[60%] mt-6 flex items-center justify-around">
+        <div className="w-[90%] mt-6 flex items-center gap-5 justify-around">
           {events.map((e, idx) => (
-            <div key={idx} className="text-white text-sm md:text-lg">
+            <div key={idx} className="text-white text-sm text-center md:text-lg">
               {e.title}
             </div>
           ))}
