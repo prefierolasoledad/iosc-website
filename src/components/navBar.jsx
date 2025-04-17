@@ -43,12 +43,14 @@ function NavBar() {
   };
 
   return (
-    <div className={`fixed bottom-0 w-full flex justify-center pl-10 pr-10 pt-5 z-[1000] h-full ${isOpen?'bg-black/70':'bg-transparent'}`}>
+    <div className={`fixed bottom-0 w-full flex justify-center pl-10 pr-10 pt-5 z-[1000] h-full ${isOpen ? 'bg-black/70' : 'bg-transparent'}`}
+    style={{
+      pointerEvents: isOpen ? 'auto' : 'none',
+    }}>
       <div className='relative flex justify-center items-end'>
         <div
           className={`absolute w-[30rem] h-[15rem] mb-[10px] transition-all duration-500 ease-in-out 
             ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0'} 
-            border-t-2 border-l-2 border-r-2 
             z-10 rounded-t-full flex justify-center items-end overflow-visible`}
         >
     
@@ -77,7 +79,9 @@ function NavBar() {
           onClick={toggleMenu}
           className='absolute w-28 h-16 flex justify-center items-center 
             border-t-2 border-l-2 border-r-2 cursor-pointer border-white 
-            bg-[#1f1f1f] rounded-t-full z-30 transition-transform duration-300'
+            bg-[#1f1f1f] rounded-t-full z-[2000] transition-transform duration-300'  // Increased z-index for the hamburger
+
+            style={{pointerEvents:'auto'}}
         >
           {!isOpen &&(<RxHamburgerMenu className='text-white mt-4 text-3xl' />)}
           {isOpen &&(<RxCross2 className='text-white mt-4 text-3xl' />)}
