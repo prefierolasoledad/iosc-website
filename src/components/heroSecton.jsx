@@ -1,4 +1,4 @@
-import HEROSECTIONIMAGE from "@/assets/hersosection-image.png"
+import HEROSECTIONIMAGE from "@/assets/background-herosection.gif"
 import STARS from "@/assets/stars.png";
 import './sprinkleAnimation.css';
 
@@ -8,8 +8,8 @@ const HeroSection=()=>{
             <div className="w-full md:w-[50%] h-full bg-no-repeat bg-contain flex justify-center"
                 style={{
                     backgroundImage: `url(${HEROSECTIONIMAGE.src})`,
-                    backgroundSize:'50% 70%',
-                    backgroundPosition:'50% 80%'
+                    backgroundSize:'130% 130%',
+                    backgroundPosition:'50% 30%'
                 }}
             />
 

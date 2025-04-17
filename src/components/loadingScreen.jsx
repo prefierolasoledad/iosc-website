@@ -6,20 +6,21 @@ const LoadingScreen = () => {
   const texts = [
     "BUILDING DREAMS",
     "TOGETHER",
-    "WELCOME TO"
+    "WELCOME TO",
+    "IOSC-EDC"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLogoVisible, setIsLogoVisible] = useState(false);
+  // const [isLogoVisible, setIsLogoVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % texts.length);
     }, 2000);
 
-    if (currentIndex === texts.length - 1) {
-      setTimeout(() => setIsLogoVisible(true), 2000);
-    }
+    // if (currentIndex === texts.length - 1) {
+    //   setTimeout(() => setIsLogoVisible(true), 2000);
+    // }
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -38,13 +39,13 @@ const LoadingScreen = () => {
 
       {/* Main Content */}
       <div className="flex flex-col items-center z-10">
-        {!isLogoVisible ? (
+        {/* {!isLogoVisible ? ( */}
           <h1 className="text-7xl text-sky-400 font-extrabold animate-pulse transition-all duration-1000">
             {texts[currentIndex]}
           </h1>
-        ) : (
-          <img src={LOGO.src} alt="Logo" className="mt-6 w-80 h-72" />
-        )}
+        {/* ) : ( */}
+          {/* <img src={LOGO.src} alt="Logo" className="mt-6 w-80 h-72" /> */}
+        {/* )} */}
       </div>
 
       {/* Styles */}
