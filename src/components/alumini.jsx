@@ -5,6 +5,7 @@ import STARS from "@/assets/stars.png";
 import "./flipcard.css";
 
 
+
 const Alumini = () => {
   const [event, setEvent] = useState("2023-2024");
   const [flippedIndex, setFlippedIndex] = useState(null); // Track flipped card index

@@ -4,6 +4,21 @@ import { FaLinkedinIn } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
 import './sprinkleAnimation.css';
 
+import PARTHAWASTHI from "@/assets/team/leads/Parth Awasthi.jpg";
+import DIPTISINGH from "@/assets/team/leads/Dipti singh.jpg";
+import AKSHATSARASWAT from "@/assets/team/leads/AKSHAT SARASWAT.jpg";
+
+import ARYANSACHAN from "@/assets/team/i3/Aryan Sachan.jpg";
+import KARANBHATT from "@/assets/team/i3/KARAN BHATT.jpg";
+
+import AMOGHGUPTA from "@/assets/team/i5/Amogh Gupta.jpg";
+import MAYANKSHARMA from "@/assets/team/i5/Mayank_sharma.jpg";
+import OCEANBHATNAGAR from "@/assets/team/i5/Ocean Bhatnagar.jpg";
+import SAMARTHYADAV from "@/assets/team/i5/Samarth Yadav.jpg";
+
+import YASHGUPTA from "@/assets/team/ultra/Yash Gupta.jpg";
+import VASUTOHANGAR from "@/assets/team/ultra/Vasu_Tohangar.jpg";
+
 const Connector = ({ direction }) => {
     return (
         <div className="flex">
@@ -32,30 +47,34 @@ const CenterNode = ({ align = "center" }) => {
     );
 };
 
-const WhiteBox = ({data}) => {
-    return(
-        <div className="w-[370px] h-full bg-white flex flex-col items-center justify-center" >
-            <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500'>
-
-            </div>
-            <div className=' grid grid-cols-2 w-[80%] h-3'>
-                <div className='w-full h-20 flex flex-col justify-center  pt-2 font-bold'>
-                    <h3>
-                        {data.Name}
-                    </h3>
-                    <p>
-                        {data.Position}
-                    </p>
-                </div>
-                <div className='w-full h-20 flex flex-row justify-end items-end pb-2 pr-2 font-bold'>
-                    <FaGithub className='text-4xl mr-5'/>
-                    <FaLinkedinIn className='text-4xl'/>
-                </div>
-            </div>
-
+const WhiteBox = ({ data }) => {
+    return (
+      <div className="w-[370px] h-full bg-white flex flex-col items-center justify-center rounded-2xl">
+        <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
+          {data.image ? (
+            <img
+              src={data.image}
+              alt={data.Name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="text-gray-500 text-sm">No Image</div>
+          )}
         </div>
-    )
-};
+        <div className='grid grid-cols-3 w-[80%] h-3 mt-2'>
+          <div className='w-full h-20 col-span-2 flex flex-col justify-center pt-2 font-bold'>
+            <h3 className="text-lg text-gray-800">{data.Name}</h3>
+            <p className="text-sm text-gray-600">{data.Position}</p>
+          </div>
+          <div className='w-full h-20 flex flex-row justify-end items-end pb-5 pr-2'>
+            <FaGithub className='text-2xl text-gray-700 hover:text-black mr-3 cursor-pointer' />
+            <FaLinkedinIn className='text-2xl text-gray-700 hover:text-black cursor-pointer' />
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
 
 const TeamSection = ({ layout,data }) => (
 
@@ -81,20 +100,23 @@ const Teams = () => {
 
     const leadsName=[
         {
-            Name:"XYZ",
-            Position:"Lead"
+            Name:"PARTH AWASTHI",
+            Position:"Lead",
+            image:PARTHAWASTHI.src
         },
         {
-            Name:"XYZ",
-            Position:"Co-Lead"
+            Name:"DIPTI SINGH",
+            Position:"Co-Lead",
+            image:DIPTISINGH.src
         },
         {
             Name:"XYZ",
             Position:"Technical Lead"
         },
         {
-            Name:"XYZ",
-            Position:"Technical Co-Lead"
+            Name:"AKSHAT SARASWAT",
+            Position:"Technical Co-Lead",
+            image:AKSHATSARASWAT.src
         },
     ];
 
@@ -103,42 +125,40 @@ const Teams = () => {
           title: "TEAM i3",
           Members: [
             {
-                "Name":"XYZ",
-                "Position":"Lead"
+                "Name":"ARYAN SACHAN",
+                "Position":"Core Member",
+                image:ARYANSACHAN.src
             },
             {
-                "Name":"XYZ",
-                "Position":"Co-Lead"
+                "Name":"KARAN BHATT",
+                "Position":"Core Member",
+                image:KARANBHATT.src
             },
-            {
-                "Name":"XYZ",
-                "Position":"Lead"
-            },
-            {
-                "Name":"XYZ",
-                "Position":"Co-Lead"
-            },
-            {
-                "Name":"XYZ",
-                "Position":"Lead"
-            },
-            {
-                "Name":"XYZ",
-                "Position":"Co-Lead"
-            }
           ]
         },
         {
           title: "TEAM i5",
           Members: [
             {
-                "Name":"XYZ",
-                "Position":"Lead"
+                "Name":"AMOGH GUPTA",
+                "Position":"Core Member",
+                image:AMOGHGUPTA.src
             },
             {
-                "Name":"XYZ",
-                "Position":"Co-Lead"
-            }
+                "Name":"MAYANK SHARMA",
+                "Position":"Core Member",
+                image:MAYANKSHARMA.src
+            },
+            {
+                "Name":"OCEAN BHATNAGAR",
+                "Position":"Core Member",
+                image:OCEANBHATNAGAR.src
+            },
+            {
+                "Name":"SAMARTH YADAV",
+                "Position":"Core Member",
+                image:SAMARTHYADAV.src
+            },
           ]
         },
         {
@@ -183,22 +203,23 @@ const Teams = () => {
           {
             title: "TEAM ULTRA",
             Members: [
-              {
-                  "Name":"XYZ",
-                  "Position":"Lead"
-              },
-              {
-                  "Name":"XYZ",
-                  "Position":"Co-Lead"
-              }
+                {
+                    "Name":"YASH GUPTA",
+                    "Position":"Core Member",
+                    image:YASHGUPTA.src
+                },
+                {
+                    "Name":"VASU TOHANGAR",
+                    "Position":"Core Member",
+                    image:VASUTOHANGAR.src
+                },
             ]
           },
       ];
-
     //   const activeEvent = events.find((e) => e.title === event);
 
     return (
-        <section className="w-full h-[490vh] bg-black pt-10 flex flex-col items-center">
+        <section className="w-full h-[800vh] bg-black pt-10 flex flex-col items-center">
             <div className="w-full flex items-center justify-center">
                 <div className="w-[400px] relative flex items-center justify-center">
                     <div
@@ -221,11 +242,11 @@ const Teams = () => {
                 </div>
             </div>
             
-            {/* <div className="w-[80%] h-[300vh] mt-10 mb-10">
+            <div className="w-[80%] h-[300vh] mt-10 mb-10">
                 {sections.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>
                 ))}
-            </div> */}
+            </div>
             <div className="flex flex-col gap-10 items-center mt-10 w-full">
                 {events.map((event, index) => (
                     <div
@@ -237,7 +258,7 @@ const Teams = () => {
                     </div>
 
                     {event.Members.map((member, idx) => (
-                        <div className='h-full w-[370px]'>
+                        <div key={idx} className='h-full w-[370px]'>
                             <WhiteBox key={idx} data={member} />
                         </div>
                     ))}
