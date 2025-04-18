@@ -35,6 +35,10 @@ const Events = () => {
         REACTBOOTCAMP.src,
         REACTBOOTCAMP2.src
       ],
+      descriptions: [
+        "Our React Bootcamp was a hands-on learning experience where students dove into the world of modern web development. From building dynamic UIs to understanding React hooks and components, participants gained practical skills and built their very first React apps. Students coded along and made it a success!",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "AZINTEK’23",
@@ -42,6 +46,10 @@ const Events = () => {
         AZINTEK.src,
         AZINTEK2.src
       ],
+      descriptions: [
+        "Azintek marked a major milestone as our tech club's first-ever tech fest, bringing together innovation, creativity, and pure tech energy under one roof! The fest featured an action-packed lineup including a high-stakes Hackathon, an inspiring Designathon, intense Coding Competitions, thrilling Gaming Events, and engaging sessions with a Global Speaker who lit up the stage with insights from the industry. The night wrapped up on a high note with a Musical Eve that kept the vibes alive long after the code stopped compiling.",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "INTEL DEV CLOUD",
@@ -49,6 +57,10 @@ const Events = () => {
         INTELDEVCLOUD.src,
         "/images/vespera2.jpg"
       ],
+      descriptions: [
+        "As part of our learning series, we hosted an interactive session on Intel DevCloud, where students explored the fundamentals of cloud computing and got hands-on experience with Intel’s powerful cloud platform. From deploying AI models to understanding edge-to-cloud workflows, participants gained practical insights into real-world applications of cloud technology.",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     // {
     //   title: "GEN AI WORKSHOP",
@@ -63,6 +75,10 @@ const Events = () => {
         SHARKTANK.src,
         SHARKTANK2.src
       ],
+      descriptions: [
+        "In our very own Shark Tank event, students stepped into the spotlight to pitch their innovative ideas to a panel of judges. From tech startups to creative solutions for real-world problems, the event was a showcase of entrepreneurial spirit, critical thinking, and bold vision. It was inspiring to see young minds turn ideas into impactful pitches!",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "STUDENT OF THE YEAR",
@@ -70,6 +86,10 @@ const Events = () => {
         StudentOfTheYear.src,
         "/images/vespera2.jpg"
       ],
+      descriptions: [
+        "Our Student of the Year award celebrated a well-rounded achiever who excelled not just in coding and technical skills, but also in leadership, creativity, and extracurricular involvement. This recognition highlights the spirit of all-round excellence — where passion for tech meets dedication beyond the screen. A true role model for the community!",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "VESPERA’24",
@@ -77,6 +97,10 @@ const Events = () => {
         VESPERA.src,
         VESPERA2.src
       ],
+      descriptions: [
+        "Vespera, our second annual tech fest, was nothing short of spectacular! Building on the success of our first edition, this time we went bigger and bolder — with a thrilling Hackathon, creative Designathon, thought-provoking Case Study competition, and a unique Filmmaking Challenge. The fest also brought out the fun side of tech with an adventurous Treasure Hunt and an unforgettable Stand-up Comedy Night that had the crowd in splits.",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "BHASHA BANDHU",
@@ -84,6 +108,10 @@ const Events = () => {
         Bashabandhu1.src,
         Bashabandhu2.src
       ],
+      descriptions: [
+        "Bhasha Bandhu was a platform where students passionately pitched their ideas, blending innovation with impactful communication. The event encouraged participants to express their thoughts clearly and confidently, regardless of language — celebrating the power of ideas across cultures and dialects. It was all about breaking barriers through expression and amplifying student voices.",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
     {
       title: "GIT-TOGETHER",
@@ -91,6 +119,10 @@ const Events = () => {
         "/images/vespera1.jpg",
         "/images/vespera2.jpg"
       ],
+      descriptions: [
+        "Git Together is our open-source project initiative in collaboration with LLMWare, aimed at bringing students into the world of real-world development. Through this program, students will contribute to impactful open-source projects, explore the power of LLMs (Large Language Models), and learn collaborative development using Git and GitHub.",
+        "The second day covered hooks, context API, and best practices."
+      ]
     },
   ];
 
@@ -130,15 +162,28 @@ const Events = () => {
           {activeEvent.images.map((imgSrc, idx) => (
             <div
               key={idx}
-              className="h-[90%] w-full bg-white rounded-xl overflow-hidden shadow-lg"
+              className="flip-card w-full h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
             >
-              <img
-                src={imgSrc}
-                alt={`${activeEvent.title} - ${idx + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <div className="flip-card-inner w-full h-full bg-white">
+                {/* Front Side */}
+                <div className="flip-card-front w-full h-full">
+                  <img
+                    src={imgSrc}
+                    alt={`${activeEvent.title} - ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Back Side */}
+                <div className="flip-card-back w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
+                  <p>
+                    {activeEvent.descriptions?.[idx] || `${activeEvent.title}`}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
+
         </div>
 
         {/* Selector Bar */}
