@@ -37,7 +37,7 @@ const Events = () => {
       ],
       descriptions: [
         "Our React Bootcamp was a hands-on learning experience where students dove into the world of modern web development. From building dynamic UIs to understanding React hooks and components, participants gained practical skills and built their very first React apps. Students coded along and made it a success!",
-        "The second day covered hooks, context API, and best practices."
+        "\"Learning React is like learning to think differently — and our students did just that.\""
       ]
     },
     {
@@ -48,7 +48,7 @@ const Events = () => {
       ],
       descriptions: [
         "Azintek marked a major milestone as our tech club's first-ever tech fest, bringing together innovation, creativity, and pure tech energy under one roof! The fest featured an action-packed lineup including a high-stakes Hackathon, an inspiring Designathon, intense Coding Competitions, thrilling Gaming Events, and engaging sessions with a Global Speaker who lit up the stage with insights from the industry. The night wrapped up on a high note with a Musical Eve that kept the vibes alive long after the code stopped compiling.",
-        "The second day covered hooks, context API, and best practices."
+        "\"It wasn’t just a fest — it was the beginning of something iconic.\""
       ]
     },
     {
@@ -59,7 +59,7 @@ const Events = () => {
       ],
       descriptions: [
         "As part of our learning series, we hosted an interactive session on Intel DevCloud, where students explored the fundamentals of cloud computing and got hands-on experience with Intel’s powerful cloud platform. From deploying AI models to understanding edge-to-cloud workflows, participants gained practical insights into real-world applications of cloud technology.",
-        "The second day covered hooks, context API, and best practices."
+        "\"From zero to cloud hero — that’s how fast we move.\""
       ]
     },
     // {
@@ -77,7 +77,7 @@ const Events = () => {
       ],
       descriptions: [
         "In our very own Shark Tank event, students stepped into the spotlight to pitch their innovative ideas to a panel of judges. From tech startups to creative solutions for real-world problems, the event was a showcase of entrepreneurial spirit, critical thinking, and bold vision. It was inspiring to see young minds turn ideas into impactful pitches!",
-        "The second day covered hooks, context API, and best practices."
+        "\"Ideas don’t need wings to fly — just courage to pitch.\""
       ]
     },
     {
@@ -88,7 +88,7 @@ const Events = () => {
       ],
       descriptions: [
         "Our Student of the Year award celebrated a well-rounded achiever who excelled not just in coding and technical skills, but also in leadership, creativity, and extracurricular involvement. This recognition highlights the spirit of all-round excellence — where passion for tech meets dedication beyond the screen. A true role model for the community!",
-        "The second day covered hooks, context API, and best practices."
+        "\"Greatness isn’t just in the code — it’s in the character.\""
       ]
     },
     {
@@ -99,7 +99,7 @@ const Events = () => {
       ],
       descriptions: [
         "Vespera, our second annual tech fest, was nothing short of spectacular! Building on the success of our first edition, this time we went bigger and bolder — with a thrilling Hackathon, creative Designathon, thought-provoking Case Study competition, and a unique Filmmaking Challenge. The fest also brought out the fun side of tech with an adventurous Treasure Hunt and an unforgettable Stand-up Comedy Night that had the crowd in splits.",
-        "The second day covered hooks, context API, and best practices."
+        "\"Vespera wasn’t just an event — it was a movement of makers.\""
       ]
     },
     {
@@ -110,7 +110,7 @@ const Events = () => {
       ],
       descriptions: [
         "Bhasha Bandhu was a platform where students passionately pitched their ideas, blending innovation with impactful communication. The event encouraged participants to express their thoughts clearly and confidently, regardless of language — celebrating the power of ideas across cultures and dialects. It was all about breaking barriers through expression and amplifying student voices.",
-        "The second day covered hooks, context API, and best practices."
+        "\"Language may differ, but passion always sounds the same.\""
       ]
     },
     {
@@ -121,7 +121,7 @@ const Events = () => {
       ],
       descriptions: [
         "Git Together is our open-source project initiative in collaboration with LLMWare, aimed at bringing students into the world of real-world development. Through this program, students will contribute to impactful open-source projects, explore the power of LLMs (Large Language Models), and learn collaborative development using Git and GitHub.",
-        "The second day covered hooks, context API, and best practices."
+        "\"We don’t just commit code — we commit to growth.\""
       ]
     },
   ];

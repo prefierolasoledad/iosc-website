@@ -9,7 +9,7 @@ const HeroSection=()=>{
                 style={{
                     backgroundImage: `url(${HEROSECTIONIMAGE.src})`,
                     backgroundSize:'130% 130%',
-                    backgroundPosition:'50% 30%'
+                    backgroundPosition:'60% 30%'
                 }}
             />
 
