@@ -1,0 +1,104 @@
+/* Style for the button to open the chatbot */
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00ccff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: background-color 0.3s;
+  }
+  
+  .chatbot-button:hover {
+    background-color: #0099cc;
+  }
+  
+  /* Chatbot container */
+  .chatbot-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    background-color: #a3d8ff; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    color: #333;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 15px;
+    z-index: 1000;
+    animation: chatbotOpen 0.5s ease-out;
+  }
+  
+  @keyframes chatbotOpen {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Chatbot header */
+  .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0099cc;
+    margin-bottom: 10px;
+  }
+  
+  .close-button {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Chatbot menu */
+  .chatbot-menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .chatbot-menu-item {
+    background-color: #0099cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .chatbot-menu-item:hover {
+    background-color: #0077b3;
+  }
+  
+  /* Chatbot response */
+  .chatbot-response {
+    margin-top: 10px;
+  }
+  
+  .response-bubble {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
