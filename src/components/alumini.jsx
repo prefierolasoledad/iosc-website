@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import STARS from "@/assets/stars.png";
 import "./flipcard.css";
 
-
+import ARYANKHANNA from '@/assets/alumini/Aryan Khanna.jpg';
+import AVINASHSRIVASTAVA from '@/assets/alumini/Avinash Srivastava.jpg';
 
 const Alumini = () => {
   const [event, setEvent] = useState("2023-2024");
@@ -26,12 +27,12 @@ const Alumini = () => {
         {
           name: "ARYAN KHANNA",
           position: "LEAD",
-          image: "/images/vespera1.jpg",
+          image: ARYANKHANNA.src,
         },
         {
-          name: "XYZ",
-          position: "CO-LEAD",
-          image: "/images/vespera2.jpg",
+          name: "AVINASH SRIVASTAVA",
+          position: "",
+          image: AVINASHSRIVASTAVA.src,
         },
         {
           name: "XYZ",
@@ -108,11 +109,11 @@ const Alumini = () => {
                       <img
                         src={lead.image}
                         alt={lead.name}
-                        className="w-full h-[70%] object-cover rounded-t-xl"
+                        className="w-[90%] h-[80%] object-cover rounded-xl"
                       />
-                      <div className="text-left w-full mt-2 px-2">
+                      <div className="text-center w-full mt-2 px-2">
                         <h3 className="font-bold text-base">{lead.name}</h3>
-                        <p className="text-sm text-gray-600">{lead.position}</p>
+                        {/* <p className="text-sm text-gray-600">{lead.position}</p> */}
                       </div>
                     </div>
 

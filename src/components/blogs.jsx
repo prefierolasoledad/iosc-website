@@ -1,28 +1,39 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import STARS from "@/assets/stars.png";
+import { RxCross2 } from "react-icons/rx";
 import './sprinkleAnimation.css';
 
 function Blogs() {
+
+  const [isPopUpShow,setIsPopUpShow]=useState(false);
+  const [selectedIndex,setSelectedIndex]=useState(-1);
+
   const blogs = [
     {
       name: 'AI in Daily Life',
       detail: 'Exploring how AI shapes our everyday decisions.',
+      desc:'NO description 1'
     },
     {
       name: 'Next-Gen Web',
       detail: 'What’s coming with Web 4.0 and beyond.',
+      desc:'NO description 2'
     },
     {
       name: 'UX Secrets',
       detail: 'Tips to design experiences users love.',
+      desc:'NO description 3'
     },
     {
       name: 'Code Zen',
       detail: 'How writing clean code boosts dev productivity.',
+      desc:'NO description 4'
     },
     {
         name: 'Code Zen',
         detail: 'How writing clean code boosts dev productivity.',
+        desc:'NO description 5'
       },
   ];
 
@@ -67,11 +78,29 @@ function Blogs() {
                 <span className="font-bold text-3xl">{blog.name}</span>
                 <span className="text-lg text-gray-300">{blog.detail}</span>
               </div>
-              <span className="text-sky-400 font-semibold text-2xl cursor-pointer hover:font-bold">view &gt;</span>
+              <span onClick={()=>{setIsPopUpShow(true); setSelectedIndex(index)}} className="text-sky-400 font-semibold text-2xl cursor-pointer hover:font-bold">view &gt;</span>
             </div>
           ))}
         </div>
       </div>
+      {isPopUpShow && (
+          <div className='absolute z-50 flex items-center justify-center top-0 w-full h-[100vh] bg-black/50'>
+            <div className='w-120 h-80 bg-black border-2 border-sky-400 rounded-2xl drop-shadow-[0_0_10px_rgba(56,189,248,0.7)] relative p-6 flex flex-col'>
+              <button 
+                onClick={() => setIsPopUpShow(false)} 
+                className='absolute top-2 right-2 text-white text-4xl hover:text-red-400'>
+                <RxCross2 />
+              </button>
+              <h3 className="text-sky-400 pt-6 text-4xl font-bold mb-4">
+                {blogs[selectedIndex].name}
+              </h3>
+              <p className="text-gray-300 text-lg">
+                {blogs[selectedIndex].desc}
+              </p>
+            </div>
+          </div>
+        )}
+
     </section>
   );
 }

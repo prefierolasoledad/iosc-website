@@ -11,14 +11,37 @@ import JAYTOMAR from "@/assets/team/leads/Jay Tomar.jpg";
 
 import ARYANSACHAN from "@/assets/team/i3/Aryan Sachan.jpg";
 import KARANBHATT from "@/assets/team/i3/KARAN BHATT.jpg";
+import RAHULBHATIA from "@/assets/team/i3/Rahul Bhatia.jpeg";
 
 import AMOGHGUPTA from "@/assets/team/i5/Amogh Gupta.jpg";
 import MAYANKSHARMA from "@/assets/team/i5/Mayank_sharma.jpg";
 import OCEANBHATNAGAR from "@/assets/team/i5/Ocean Bhatnagar.jpg";
 import SAMARTHYADAV from "@/assets/team/i5/Samarth Yadav.jpg";
+import PRATHAMKUMAR from "@/assets/team/i5/Pratham Kumar.jpg";
+import UTSAVKUMAR from "@/assets/team/i5/Utsav Kumar.jpg";
+import WAQARAKHTAR from "@/assets/team/i5/Waqar Akhtar.jpeg";
+
+import AKSHITSHARMA from '@/assets/team/i7/AKSHIT SHARMA.jpg';
+
+import KHUSHITHAKUR from '@/assets/team/arc/Khushi_Thakur.jpg';
+import PARIDUDEJA from '@/assets/team/arc/Pari Dudeja.jpg';
+import KRITIRASTOGI from '@/assets/team/arc/KritiRastogi.jpg';
+import ALISHAGODARA from '@/assets/team/arc/AlishaGodara.png';
+import SANCHITNARANG from '@/assets/team/arc/SanchitNarang.jpeg';
+
+import UTKARSHCHAUHAN from '@/assets/team/i9/utkarsh chauhan.jpg';
+import AKSHATTALWAR from '@/assets/team/i9/Akshat talwar.jpg';
+import DISHITASINHA from '@/assets/team/i9/Dishita Sinha.jpeg';
+import HARSHITNEGI from '@/assets/team/i9/Harshit Negi.jpg';
+import PARTHMAWAI from '@/assets/team/i9/Parth Mawai.jpg';
+import PIYUSHGUPTA from '@/assets/team/i9/PIYUSH GUPTA.jpg';
+import PRIYACHAURASIA from '@/assets/team/i9/Priya Chaurasia.jpg';
+import RICHIKDAS from '@/assets/team/i9/Richik Das.png';
 
 import YASHGUPTA from "@/assets/team/ultra/Yash Gupta.jpg";
 import VASUTOHANGAR from "@/assets/team/ultra/Vasu_Tohangar.jpg";
+import ARMAAN from "@/assets/team/ultra/Armaan.jpg";
+import DIPANSHUSAROVAR from "@/assets/team/ultra/Dipanshu Sarovar.jpg";
 
 const Connector = ({ direction }) => {
     return (
@@ -58,41 +81,17 @@ const TeamSection = ({ layout,data }) => (
             if (item === "connector-left") return <Connector direction="left" key={index} />;
             if (item === "connector-right") return <Connector direction="right" key={index} />;
             if (item === "center-node-left") return <div className="flex justify-center items-center" key={index}><CenterNode align="start" /></div>;
-            if (item === "center-node") return <div className="flex justify-center items-center" key={index}><CenterNode /></div>;
+            if (item === "center-node") return <div className="flex ml-[-10%] justify-center items-center" key={index}><CenterNode /></div>;
             if (item === "white-box") return <WhiteBox key={index}  data={data} isFillable={true}/>;
             return <div key={index}/>;
         })}
     </div>
 );
 
-{/* <div
-              key={idx}
-              className="flip-card w-full h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
-            >
-              <div className="flip-card-inner w-full h-full bg-white"> */}
-                {/* Front Side */}
-                // <div className="flip-card-front w-full h-full">
-                //   <img
-                //     src={imgSrc}
-                //     alt={`${activeEvent.title} - ${idx + 1}`}
-                //     className="w-full h-full object-cover"
-                //   />
-                // </div>
-
-                {/* Back Side */}
-            //     <div className="flip-card-back w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
-            //       <p>
-            //         {activeEvent.descriptions?.[idx] || `${activeEvent.title}`}
-            //       </p>
-            //     </div>
-            //   </div>
-            // </div>
-
 const WhiteBox = ({ data,isFillable }) => {
     return (
       <div className={`${isFillable?'flip-card':''} w-[370px] h-[460px]`}>
         <div className="flip-card-inner">
-          {/* Front */}
           <div className="flip-card-front bg-white rounded-2xl w-full h-full flex flex-col items-center justify-center">
             <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
               {data.image ? (
@@ -124,8 +123,6 @@ const WhiteBox = ({ data,isFillable }) => {
               </div>
             </div>
           </div>
-  
-          {/* Back */}
           <div className="flip-card-back bg-gray-100 rounded-2xl p-4 text-gray-800 flex items-center justify-center text-center">
             {data.bio ? (
               <p className="text-sm">{data.bio}</p>
@@ -183,6 +180,11 @@ const Teams = () => {
                 "Position":"Core Member",
                 image:KARANBHATT.src
             },
+            {
+              "Name":"RAHUL BHATIA",
+              "Position":"Core Member",
+              image:RAHULBHATIA.src
+          },
           ]
         },
         {
@@ -208,18 +210,30 @@ const Teams = () => {
                 "Position":"Core Member",
                 image:SAMARTHYADAV.src
             },
+            {
+              "Name":"PRATHAM KUMAR",
+              "Position":"Core Member",
+              image:PRATHAMKUMAR.src
+          },
+          {
+              "Name":"UTSAV KUMAR",
+              "Position":"Core Member",
+              image:UTSAVKUMAR.src
+          },
+          {
+              "Name":"WAQAR AKHTAR",
+              "Position":"Core Member",
+              image:WAQARAKHTAR.src
+          },
           ]
         },
         {
             title: "TEAM i7",
             Members: [
               {
-                  "Name":"XYZ",
-                  "Position":"Lead"
-              },
-              {
-                  "Name":"XYZ",
-                  "Position":"Co-Lead"
+                  "Name":"AKSHIT SHARMA",
+                  "Position":"Core Member",
+                  image:AKSHITSHARMA.src
               }
             ]
           },
@@ -227,26 +241,75 @@ const Teams = () => {
             title: "TEAM ARC",
             Members: [
               {
-                  "Name":"XYZ",
-                  "Position":"Lead"
+                "Name":"KHUSHI THAKUR",
+                "Position":"Core Member",
+                image:KHUSHITHAKUR.src
               },
               {
-                  "Name":"XYZ",
-                  "Position":"Co-Lead"
-              }
+                "Name":"PARI DUDEJA",
+                "Position":"Core Member",
+                image:PARIDUDEJA.src
+              },
+              {
+                  "Name":"KRITI RASTOGI",
+                  "Position":"Core Member",
+                  image:KRITIRASTOGI.src
+              },
+              {
+                "Name":"ALISHA GODARA",
+                "Position":"Core Member",
+                image:ALISHAGODARA.src
+              },
+              {
+              "Name":"SANCHIT NARANG",
+              "Position":"Core Member",
+              image:SANCHITNARANG.src
+              },
             ]
           },
         {
             title: "TEAM i9",
             Members: [
               {
-                  "Name":"XYZ",
-                  "Position":"Lead"
+                "Name":"UTKARSH CHAUHAN",
+                "Position":"Core Member",
+                image:UTKARSHCHAUHAN.src
               },
               {
-                  "Name":"XYZ",
-                  "Position":"Co-Lead"
-              }
+                  "Name":"AKSHAT TALWAR",
+                  "Position":"Core Member",
+                  image:AKSHATTALWAR.src
+              },
+              {
+                  "Name":"DISHITA SINHA",
+                  "Position":"Core Member",
+                  image:DISHITASINHA.src
+              },
+              {
+                "Name":"HARSHIT NEGI",
+                "Position":"Core Member",
+                image:HARSHITNEGI.src
+              },
+              {
+                  "Name":"PARTH MAWAI",
+                  "Position":"Core Member",
+                  image:PARTHMAWAI.src
+              },
+              {
+                "Name":"PIYUSH GUPTA",
+                "Position":"Core Member",
+                image:PIYUSHGUPTA.src
+            },
+            {
+                "Name":"PRIYA CHAURASIA",
+                "Position":"Core Member",
+                image:PRIYACHAURASIA.src
+            },
+            {
+              "Name":"RICHIK DAS",
+              "Position":"Core Member",
+              image:RICHIKDAS.src
+            },
             ]
           },
           {
@@ -262,10 +325,19 @@ const Teams = () => {
                     "Position":"Core Member",
                     image:VASUTOHANGAR.src
                 },
+                {
+                  "Name":"ARMAAN",
+                  "Position":"Core Member",
+                  image:ARMAAN.src
+              },
+              {
+                  "Name":"DIPANSHU SAROVAR",
+                  "Position":"Core Member",
+                  image:DIPANSHUSAROVAR.src
+              },
             ]
           },
       ];
-    //   const activeEvent = events.find((e) => e.title === event);
 
     return (
         <section className="w-full h-[800vh] bg-black pt-10 flex flex-col items-center">
@@ -314,8 +386,6 @@ const Teams = () => {
                     </div>
                 ))}
             </div>
-
-
         </section>
     );
 };
