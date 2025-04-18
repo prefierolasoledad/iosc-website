@@ -2,6 +2,27 @@
 
 import { useState } from "react";
 import STARS from "@/assets/stars.png";
+
+import Bashabandhu1 from '@/assets/events/bhasha bandhu.jpg';
+import Bashabandhu2 from '@/assets/events/basha bandhu 2.jpg';
+
+import StudentOfTheYear from '@/assets/events/student of the year.jpg';
+
+import INTELDEVCLOUD from '@/assets/events/intel dev cloud.jpg';
+
+import SHARKTANK from '@/assets/events/shark tank.jpg';
+import SHARKTANK2 from '@/assets/events/shark tank2.jpg';
+
+
+import AZINTEK from '@/assets/events/azientek.jpg';
+import AZINTEK2 from '@/assets/events/azientek2.jpg';
+
+import REACTBOOTCAMP from '@/assets/events/react boot camp.jpg';
+import REACTBOOTCAMP2 from '@/assets/events/react boot camp2.jpg';
+
+import VESPERA from '@/assets/events/vespera1.jpg';
+import VESPERA2 from '@/assets/events/vespera2.jpg';
+
 import './sprinkleAnimation.css';
 
 const Events = () => {
@@ -11,57 +32,57 @@ const Events = () => {
     {
       title: "REACT BOOT CAMP",
       images: [
-        "/images/vespera1.jpg",
-        "/images/vespera2.jpg"
+        REACTBOOTCAMP.src,
+        REACTBOOTCAMP2.src
       ],
     },
     {
       title: "AZINTEK’23",
       images: [
-        "/images/azintek1.jpg",
-        "/images/azintek2.jpg"
+        AZINTEK.src,
+        AZINTEK2.src
       ],
     },
     {
       title: "INTEL DEV CLOUD",
       images: [
-        "/images/vespera1.jpg",
+        INTELDEVCLOUD.src,
         "/images/vespera2.jpg"
       ],
     },
-    {
-      title: "GEN AI WORKSHOP",
-      images: [
-        "/images/azintek1.jpg",
-        "/images/azintek2.jpg"
-      ],
-    },
+    // {
+    //   title: "GEN AI WORKSHOP",
+    //   images: [
+    //     "/images/azintek1.jpg",
+    //     "/images/azintek2.jpg"
+    //   ],
+    // },
     {
       title: "SHARK TANK",
       images: [
-        "/images/vespera1.jpg",
-        "/images/vespera2.jpg"
+        SHARKTANK.src,
+        SHARKTANK2.src
       ],
     },
     {
       title: "STUDENT OF THE YEAR",
       images: [
-        "/images/vespera1.jpg",
+        StudentOfTheYear.src,
         "/images/vespera2.jpg"
       ],
     },
     {
       title: "VESPERA’24",
       images: [
-        "/images/vespera1.jpg",
-        "/images/vespera2.jpg"
+        VESPERA.src,
+        VESPERA2.src
       ],
     },
     {
       title: "BHASHA BANDHU",
       images: [
-        "/images/vespera1.jpg",
-        "/images/vespera2.jpg"
+        Bashabandhu1.src,
+        Bashabandhu2.src
       ],
     },
     {

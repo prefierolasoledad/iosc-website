@@ -34,7 +34,7 @@ const CenterNode = ({ align = "center" }) => {
 
 const WhiteBox = ({data}) => {
     return(
-        <div className="w-full h-full bg-white flex flex-col items-center justify-center" >
+        <div className="w-[370px] h-full bg-white flex flex-col items-center justify-center" >
             <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500'>
 
             </div>
@@ -102,6 +102,22 @@ const Teams = () => {
         {
           title: "TEAM i3",
           Members: [
+            {
+                "Name":"XYZ",
+                "Position":"Lead"
+            },
+            {
+                "Name":"XYZ",
+                "Position":"Co-Lead"
+            },
+            {
+                "Name":"XYZ",
+                "Position":"Lead"
+            },
+            {
+                "Name":"XYZ",
+                "Position":"Co-Lead"
+            },
             {
                 "Name":"XYZ",
                 "Position":"Lead"
@@ -182,7 +198,7 @@ const Teams = () => {
     //   const activeEvent = events.find((e) => e.title === event);
 
     return (
-        <section className="w-full h-[800vh] bg-black pt-10 flex flex-col items-center">
+        <section className="w-full h-[490vh] bg-black pt-10 flex flex-col items-center">
             <div className="w-full flex items-center justify-center">
                 <div className="w-[400px] relative flex items-center justify-center">
                     <div
@@ -205,23 +221,25 @@ const Teams = () => {
                 </div>
             </div>
             
-            <div className="w-[80%] h-[300vh] mt-10 mb-10">
+            {/* <div className="w-[80%] h-[300vh] mt-10 mb-10">
                 {sections.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>
                 ))}
-            </div>
-            <div className="flex flex-col gap-10 items-center w-full">
+            </div> */}
+            <div className="flex flex-col gap-10 items-center mt-10 w-full">
                 {events.map((event, index) => (
                     <div
                     key={index}
-                    className="w-[90%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 grid grid-cols-1 md:grid-cols-3 items-center gap-4 px-4 py-6"
+                    className="w-[90%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 flex overflow-x-auto items-center scrollbar-hide gap-7 px-4 py-6"
                     >
-                    <div className="text-center text-4xl md:text-6xl font-extrabold text-white flex justify-center items-center">
+                    <div className="text-center h-full min-w-[380px] flex-grow text-4xl md:text-6xl font-extrabold text-white flex justify-center items-center">
                         {event.title}
                     </div>
 
                     {event.Members.map((member, idx) => (
-                        <WhiteBox key={idx} data={member} />
+                        <div className='h-full w-[370px]'>
+                            <WhiteBox key={idx} data={member} />
+                        </div>
                     ))}
                     </div>
                 ))}
