@@ -7,6 +7,7 @@ import './sprinkleAnimation.css';
 import PARTHAWASTHI from "@/assets/team/leads/Parth Awasthi.jpg";
 import DIPTISINGH from "@/assets/team/leads/Dipti singh.jpg";
 import AKSHATSARASWAT from "@/assets/team/leads/AKSHAT SARASWAT.jpg";
+import JAYTOMAR from "@/assets/team/leads/Jay Tomar.jpg";
 
 import ARYANSACHAN from "@/assets/team/i3/Aryan Sachan.jpg";
 import KARANBHATT from "@/assets/team/i3/KARAN BHATT.jpg";
@@ -110,8 +111,9 @@ const Teams = () => {
             image:DIPTISINGH.src
         },
         {
-            Name:"XYZ",
-            Position:"Technical Lead"
+            Name:"JAY TOMAR",
+            Position:"Technical Lead",
+            image:JAYTOMAR.src
         },
         {
             Name:"AKSHAT SARASWAT",

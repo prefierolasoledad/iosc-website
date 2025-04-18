@@ -59,4 +59,12 @@
     transform: rotateY(180deg);
     z-index: 1;
   }
+
   
+  /* styles.css */
+.text-outline {
+  /* color: #38bdf8;  */
+  /* sky-400 */
+  -webkit-text-stroke: 1px #38bdf8; /* white border */
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); /* optional glow */
+}
