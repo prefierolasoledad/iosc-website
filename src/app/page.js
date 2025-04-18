@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
+import Chatbot from "../components/Chatbot";  // Correct path for Chatbot
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ export default function Home() {
         <>
           <NavBar />
           <HeroSection />
+          <Chatbot /> {/* Add Chatbot here */}
         </>
       )}
     </>
