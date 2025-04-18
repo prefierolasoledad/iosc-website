@@ -45,31 +45,31 @@ const Alumini = () => {
         },
       ],
     },
-    {
-      title: "2024-2025",
-      leads: [
-        {
-          name: "PARTH AWASTHI",
-          position: "LEAD",
-          image: "/images/azintek1.jpg",
-        },
-        {
-          name: "DIPTI SINGH",
-          position: "CO-LEAD",
-          image: "/images/azintek2.jpg",
-        },
-        {
-          name: "JAY TOMAR",
-          position: "TECHNICAL LEAD",
-          image: "/images/azintek1.jpg",
-        },
-        {
-          name: "AKSHAT SARASWAT",
-          position: "TECHNICAL CO-LEAD",
-          image: "/images/azintek2.jpg",
-        },
-      ],
-    },
+    // {
+    //   title: "2024-2025",
+    //   leads: [
+    //     {
+    //       name: "PARTH AWASTHI",
+    //       position: "LEAD",
+    //       image: "/images/azintek1.jpg",
+    //     },
+    //     {
+    //       name: "DIPTI SINGH",
+    //       position: "CO-LEAD",
+    //       image: "/images/azintek2.jpg",
+    //     },
+    //     {
+    //       name: "JAY TOMAR",
+    //       position: "TECHNICAL LEAD",
+    //       image: "/images/azintek1.jpg",
+    //     },
+    //     {
+    //       name: "AKSHAT SARASWAT",
+    //       position: "TECHNICAL CO-LEAD",
+    //       image: "/images/azintek2.jpg",
+    //     },
+    //   ],
+    // },
   ];
 
   const activeEvent = alumini.find((e) => e.title === event);

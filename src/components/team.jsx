@@ -48,34 +48,8 @@ const CenterNode = ({ align = "center" }) => {
     );
 };
 
-const WhiteBox = ({ data }) => {
-    return (
-      <div className="w-[370px] h-full bg-white flex flex-col items-center justify-center rounded-2xl">
-        <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
-          {data.image ? (
-            <img
-              src={data.image}
-              alt={data.Name}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="text-gray-500 text-sm">No Image</div>
-          )}
-        </div>
-        <div className='grid grid-cols-3 w-[80%] h-3 mt-2'>
-          <div className='w-full h-20 col-span-2 flex flex-col justify-center pt-2 font-bold'>
-            <h3 className="text-lg text-gray-800">{data.Name}</h3>
-            <p className="text-sm text-gray-600">{data.Position}</p>
-          </div>
-          <div className='w-full h-20 flex flex-row justify-end items-end pb-5 pr-2'>
-            <FaGithub className='text-2xl text-gray-700 hover:text-black mr-3 cursor-pointer' />
-            <FaLinkedinIn className='text-2xl text-gray-700 hover:text-black cursor-pointer' />
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
+
+
 
 const TeamSection = ({ layout,data }) => (
 
@@ -85,11 +59,84 @@ const TeamSection = ({ layout,data }) => (
             if (item === "connector-right") return <Connector direction="right" key={index} />;
             if (item === "center-node-left") return <div className="flex justify-center items-center" key={index}><CenterNode align="start" /></div>;
             if (item === "center-node") return <div className="flex justify-center items-center" key={index}><CenterNode /></div>;
-            if (item === "white-box") return <WhiteBox key={index}  data={data}/>;
+            if (item === "white-box") return <WhiteBox key={index}  data={data} isFillable={true}/>;
             return <div key={index}/>;
         })}
     </div>
 );
+
+{/* <div
+              key={idx}
+              className="flip-card w-full h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
+            >
+              <div className="flip-card-inner w-full h-full bg-white"> */}
+                {/* Front Side */}
+                // <div className="flip-card-front w-full h-full">
+                //   <img
+                //     src={imgSrc}
+                //     alt={`${activeEvent.title} - ${idx + 1}`}
+                //     className="w-full h-full object-cover"
+                //   />
+                // </div>
+
+                {/* Back Side */}
+            //     <div className="flip-card-back w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
+            //       <p>
+            //         {activeEvent.descriptions?.[idx] || `${activeEvent.title}`}
+            //       </p>
+            //     </div>
+            //   </div>
+            // </div>
+
+const WhiteBox = ({ data,isFillable }) => {
+    return (
+      <div className={`${isFillable?'flip-card':''} w-[370px] h-[460px]`}>
+        <div className="flip-card-inner">
+          {/* Front */}
+          <div className="flip-card-front bg-white rounded-2xl w-full h-full flex flex-col items-center justify-center">
+            <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
+              {data.image ? (
+                <img
+                  src={data.image}
+                  alt={data.Name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-gray-500 text-sm">No Image</div>
+              )}
+            </div>
+            <div className='grid grid-cols-3 w-[80%] h-3 mt-2'>
+              <div className='w-full h-20 col-span-2 flex flex-col justify-center pt-2 font-bold'>
+                <h3 className="text-lg text-gray-800">{data.Name}</h3>
+                <p className="text-sm text-gray-600">{data.Position}</p>
+              </div>
+              <div className='w-full h-20 flex flex-row justify-end items-end pb-5 pr-2'>
+                {data.github && (
+                  <a href={data.github} target="_blank" rel="noopener noreferrer">
+                    <FaGithub className='text-2xl text-gray-700 hover:text-black mr-3 cursor-pointer' />
+                  </a>
+                )}
+                {data.linkedin && (
+                  <a href={data.linkedin} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedinIn className='text-2xl text-gray-700 hover:text-black cursor-pointer' />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+  
+          {/* Back */}
+          <div className="flip-card-back bg-gray-100 rounded-2xl p-4 text-gray-800 flex items-center justify-center text-center">
+            {data.bio ? (
+              <p className="text-sm">{data.bio}</p>
+            ) : (
+              <p className="text-sm text-gray-500">No additional info available.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
 const Teams = () => {
     const sections = [
@@ -261,7 +308,7 @@ const Teams = () => {
 
                     {event.Members.map((member, idx) => (
                         <div key={idx} className='h-full w-[370px]'>
-                            <WhiteBox key={idx} data={member} />
+                            <WhiteBox key={idx} data={member} isFillable={false}/>
                         </div>
                     ))}
                     </div>
