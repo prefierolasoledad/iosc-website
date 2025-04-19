@@ -30,22 +30,25 @@ const Alumini = () => {
           name: "ARYAN KHANNA",
           position: "LEAD",
           image: ARYANKHANNA.src,
+          quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
         },
         {
           name: "AVINASH SRIVASTAVA",
           position: "",
           image: AVINASHSRIVASTAVA.src,
+          quote: "Dream big, work hard, stay focused, and surround yourself with good people.",
         },
         {
           name: "DIVYANSH",
           position: "",
           image: DIVYANSH.src,
-
+          quote: "Great things never come from comfort zones.",
         },
         {
           name: "SIDDHARTH GUPTA",
           position: "",
           image: SIDDHARTHGUPTA.src,
+          quote: "Push yourself, because no one else is going to do it for you.",
         },
       ],
     },
@@ -121,8 +124,8 @@ const Alumini = () => {
                     </div>
 
                     {/* Back */}
-                    <div className="flip-back bg-black text-white rounded-xl flex items-center justify-center p-4">
-                      <p>Back content here (like bio, quote, or links)</p>
+                    <div className="flip-back bg-black text-center text-white rounded-xl flex items-center justify-center p-4">
+                      <p>"{lead.quote}"</p>
                     </div>
                   </div>
                 </div>

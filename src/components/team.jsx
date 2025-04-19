@@ -134,10 +134,10 @@ const WhiteBox = ({ data,isFillable }) => {
             </div>
           </div>
           <div className="flip-card-back bg-gray-100 rounded-2xl p-4 text-gray-800 flex items-center justify-center text-center">
-            {data.bio ? (
-              <p className="text-sm">{data.bio}</p>
+            {data.quote ? (
+              <p className="text-xl font-bold">"{data.quote}"</p>
             ) : (
-              <p className="text-sm text-gray-500">No additional info available.</p>
+              <p className="text-md font-bold text-gray-500">No additional info available.</p>
             )}
           </div>
         </div>
@@ -153,28 +153,33 @@ const Teams = () => {
         ["white-box", "", ""],
     ];
 
-    const leadsName=[
-        {
-            Name:"PARTH AWASTHI",
-            Position:"Lead",
-            image:PARTHAWASTHI.src
-        },
-        {
-            Name:"DIPTI SINGH",
-            Position:"Co-Lead",
-            image:DIPTISINGH.src
-        },
-        {
-            Name:"JAY TOMAR",
-            Position:"Technical Lead",
-            image:JAYTOMAR.src
-        },
-        {
-            Name:"AKSHAT SARASWAT",
-            Position:"Technical Co-Lead",
-            image:AKSHATSARASWAT.src
-        },
+    const leadsName = [
+      {
+        Name: "PARTH AWASTHI",
+        Position: "Lead",
+        image: PARTHAWASTHI.src,
+        quote: "Leadership is not about a title or a designation. It’s about impact, influence, and inspiration.",
+      },
+      {
+        Name: "DIPTI SINGH",
+        Position: "Co-Lead",
+        image: DIPTISINGH.src,
+        quote: "The future belongs to those who believe in the beauty of their dreams.",
+      },
+      {
+        Name: "JAY TOMAR",
+        Position: "Technical Lead",
+        image: JAYTOMAR.src,
+        quote: "Don't watch the clock; do what it does. Keep going.",
+      },
+      {
+        Name: "AKSHAT SARASWAT",
+        Position: "Technical Co-Lead",
+        image: AKSHATSARASWAT.src,
+        quote: "Success is the sum of small efforts, repeated day in and day out.",
+      },
     ];
+    
 
     const events = [
         {
@@ -422,7 +427,8 @@ const Teams = () => {
                       style={{
                         backgroundImage:`url(${event.image})`,
                         backgroundSize:'contain',
-                        backgroundPosition:'center'
+                        backgroundPosition:'center',
+                        backgroundRepeat:'no-repeat'
                       }}
                     
                     >

@@ -3,32 +3,33 @@ import { FaGithub } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
 import './sprinkleAnimation.css';
 
+import PROJECTI5 from '@/assets/projects/ProjectI5.png';
+
 const projects = [
   {
     title: "XYZ PROJECT 1",
     description: "Details 1",
-    github: "https://github.com/user/project1"
+    github: "https://github.com/user/project1",
+    image: PROJECTI5.src,
   },
   {
     title: "XYZ PROJECT 2",
     description: "Details 2",
-    github: "https://github.com/user/project2"
+    github: "https://github.com/user/project2",
+    image: "",
   },
   {
     title: "XYZ PROJECT 3",
     description: "Details 3",
-    github: "https://github.com/user/project3"
+    github: "https://github.com/user/project3",
+    image: "",
   },
   {
     title: "XYZ PROJECT 4",
     description: "Details 4",
-    github: "https://github.com/user/project4"
+    github: "https://github.com/user/project4",
+    image: "",
   },
-  {
-    title: "XYZ PROJECT 5",
-    description: "Details 5",
-    github: "https://github.com/user/project5"
-  }
 ];
 
 function Projects() {
@@ -61,7 +62,13 @@ function Projects() {
           {projects.map((project, index) => (
             <div key={index} className='w-[300px] h-full bg-black pt-10 pb-6 relative rounded-xl'>
               <div className='w-full h-50 bg-gray-100'>
-                {/* Optional: Add an image here */}
+                {project.image!='' && (
+                  <img
+                  src={project.image}
+                  alt="Project"
+                  className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               <h2 className='text-white text-center pt-5 text-2xl font-bold'>
                 {project.title}
