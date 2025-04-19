@@ -15,7 +15,7 @@ const Chatbot = () => {
       {/* The chatbot button, appears when chatbot is minimized */}
       {!isOpen && (
         <div className="chatbot-button" onClick={() => setIsOpen(true)}>
-          🗨️ Chat with IoSC
+          🗨️ <span className="hidden sm:inline ml-1">Chat with IoSC</span>
         </div>
       )}
 

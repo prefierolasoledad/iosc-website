@@ -42,6 +42,13 @@ function NavBar() {
     router.push(path);
   };
 
+  const getTranslateY = () => {
+    if (window.innerWidth < 640) return -130; // sm
+    if (window.innerWidth < 768) return -150; // md
+    return -180; // lg and above
+  };
+  
+
   return (
     <div className={`fixed bottom-0 w-full flex justify-center pl-10 pr-10 pt-5 z-[1000] h-full ${isOpen ? 'bg-black/70' : 'bg-transparent'}`}
     style={{
@@ -60,16 +67,17 @@ function NavBar() {
                 <div
                 key={`icon-${i}`}
                 onClick={() => handleNavigation(path)}
-                className={`absolute bg-white hover:bg-sky-400 hover:text-white text-black w-18 h-18 hover:scale-110 rounded-full border-2 border-white p-3 flex items-center justify-center transition-all duration-500 cursor-pointer 
+                className={`absolute bg-white hover:bg-sky-400 hover:text-white text-black md:w-18 md:h-18 w-14 h-14 hover:scale-110 rounded-full border-2 border-white p-3 flex items-center justify-center transition-all duration-500 cursor-pointer 
                     ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{
-                    transform: `rotate(${angle}deg) translateY(-180px) rotate(-${angle}deg)`,
-                    transformOrigin: 'bottom center',
+                  transform: `rotate(${angle}deg) translateY(${getTranslateY()}px) rotate(-${angle}deg)`,
+                  transformOrigin: 'bottom center',
                 }}
+                    
                 >
                 <div className="flex flex-col items-center">
-                    <div className="text-3xl">{icon}</div>
-                    <span className="text-[10px] mt-1 font-semibold">{label}</span>
+                    <div className="md:text-3xl text-2xl">{icon}</div>
+                    <span className="md:text-[10px] text-[8px] mt-[-2px] font-semibold">{label}</span>
                 </div>
                 </div>
             );

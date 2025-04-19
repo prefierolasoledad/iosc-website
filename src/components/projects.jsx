@@ -33,7 +33,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section className='w-full min-h-[100vh] flex flex-col bg-black pt-10 items-center'>
+    <section className='w-full min-h-[100vh] flex flex-col bg-black pt-10 items-center overflow-hidden'>
       <div className="w-full flex items-center justify-center">
         <div className="w-[400px] relative flex items-center justify-center">
           <div

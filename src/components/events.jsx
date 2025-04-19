@@ -9,6 +9,7 @@ import Bashabandhu2 from '@/assets/events/basha bandhu 2.jpg';
 import StudentOfTheYear from '@/assets/events/student of the year.jpg';
 
 import INTELDEVCLOUD from '@/assets/events/intel dev cloud.jpg';
+import INTELDEVCLOUD2 from '@/assets/events/dev cloud2.jpg';
 
 import SHARKTANK from '@/assets/events/shark tank.jpg';
 import SHARKTANK2 from '@/assets/events/shark tank2.jpg';
@@ -41,7 +42,7 @@ const Events = () => {
       ]
     },
     {
-      title: "AZINTEK’23",
+      title: "AZINTEK",
       images: [
         AZINTEK.src,
         AZINTEK2.src
@@ -55,7 +56,7 @@ const Events = () => {
       title: "INTEL DEV CLOUD",
       images: [
         INTELDEVCLOUD.src,
-        "/images/vespera2.jpg"
+        INTELDEVCLOUD2.src
       ],
       descriptions: [
         "As part of our learning series, we hosted an interactive session on Intel DevCloud, where students explored the fundamentals of cloud computing and got hands-on experience with Intel’s powerful cloud platform. From deploying AI models to understanding edge-to-cloud workflows, participants gained practical insights into real-world applications of cloud technology.",
@@ -129,43 +130,37 @@ const Events = () => {
   const activeEvent = events.find((e) => e.title === event);
 
   return (
-    <section className="bg-black w-full min-h-screen pt-10">
+    <section className="bg-black w-full min-h-screen pt-10 overflow-hidden pb-18 md:pb-0">
+      {/* Title */}
       <div className="w-full flex items-center justify-center">
-        <div className="w-[400px] relative flex items-center justify-center">
+        <div className="w-[90%] max-w-[400px] relative flex items-center justify-center">
           <div
-            className="absolute left-[-50px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
-            style={{
-              backgroundImage: `url(${STARS.src})`,
-            }}
+            className="absolute left-[-50px] top-[-50px] w-40 h-40 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+            style={{ backgroundImage: `url(${STARS.src})` }}
           />
-
           <div
-            className="absolute right-[-70px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
-            style={{
-              backgroundImage: `url(${STARS.src})`,
-            }}
+            className="absolute right-[-70px] top-[-90px] w-40 h-40 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+            style={{ backgroundImage: `url(${STARS.src})` }}
           />
-
-          <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+          <h2 className="text-center font-extrabold text-4xl md:text-6xl text-sky-400 mb-10 relative z-10">
             EVENTS
           </h2>
         </div>
       </div>
 
-
+      {/* Card Display */}
       <div className="w-full flex flex-col items-center">
-        <div className="w-[90%] md:w-[80%] h-[400px] rounded-2xl bg-gray-400 grid grid-cols-1 md:grid-cols-3 items-center gap-4 px-4 py-6">
-          <div className="text-center text-4xl md:text-6xl font-extrabold text-white flex justify-center items-center">
+        <div className="w-[90%] md:w-[80%] min-h-[450px] lg:h-[400px] rounded-2xl bg-gray-400 grid grid-cols-1 md:grid-cols-3 items-center gap-4 px-4 py-6">
+          <div className="text-center text-2xl md:text-4xl lg:text-5xl font-extrabold text-white flex justify-center items-center">
             {activeEvent.title}
           </div>
 
           {activeEvent.images.map((imgSrc, idx) => (
             <div
               key={idx}
-              className="flip-card w-full h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
+              className="flip-card w-full h-[250px] md:h-[300px] lg:h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
             >
               <div className="flip-card-inner w-full h-full bg-white">
-                {/* Front Side */}
                 <div className="flip-card-front w-full h-full">
                   <img
                     src={imgSrc}
@@ -173,9 +168,7 @@ const Events = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Back Side */}
-                <div className="flip-card-back w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
+                <div className="flip-card-back w-full h-full flex items-center justify-center bg-black text-white text-center p-3 text-sm md:text-base">
                   <p>
                     {activeEvent.descriptions?.[idx] || `${activeEvent.title}`}
                   </p>
@@ -183,26 +176,25 @@ const Events = () => {
               </div>
             </div>
           ))}
-
         </div>
 
-        {/* Selector Bar */}
-        <div className="w-[90%] mt-16 h-1 bg-gray-400  flex items-center justify-around">
+        {/* Event Selector Bar */}
+        <div className="w-[90%] mt-10 md:mt-16 h-1 bg-gray-400 flex items-center justify-around">
           {events.map((e, idx) => (
             <div
               key={idx}
               onClick={() => setEvent(e.title)}
-              className={`h-10 transition-all duration-300 ${
-                event === e.title ? "w-10" : "w-5"
+              className={`h-5 md:h-10 transition-all duration-300 ${
+                event === e.title ? "w-5 md:w-10" : "w-2 md:w-5"
               } bg-sky-400 rounded-xl cursor-pointer`}
             />
           ))}
         </div>
 
-        {/* Labels */}
-        <div className="w-[90%] mt-6 flex items-center gap-5 justify-around">
+        {/* Event Titles */}
+        <div className="w-[90%] mt-4 md:mt-6 flex flex-wrap gap-2 md:gap-5 justify-around">
           {events.map((e, idx) => (
-            <div key={idx} className="text-white text-sm text-center md:text-lg">
+            <div key={idx} className="text-white text-[5px] md:text-[14px] text-center max-w-[100px] break-words">
               {e.title}
             </div>
           ))}
@@ -210,6 +202,7 @@ const Events = () => {
       </div>
     </section>
   );
+    
 };
 
 export default Events;

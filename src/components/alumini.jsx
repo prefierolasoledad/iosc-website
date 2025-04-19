@@ -6,6 +6,8 @@ import "./flipcard.css";
 
 import ARYANKHANNA from '@/assets/alumini/Aryan Khanna.jpg';
 import AVINASHSRIVASTAVA from '@/assets/alumini/Avinash Srivastava.jpg';
+import DIVYANSH from '@/assets/alumini/Divyansh.jpg';
+import SIDDHARTHGUPTA from '@/assets/alumini/Siddharth Gupta.jpg';
 
 const Alumini = () => {
   const [event, setEvent] = useState("2023-2024");
@@ -35,14 +37,15 @@ const Alumini = () => {
           image: AVINASHSRIVASTAVA.src,
         },
         {
-          name: "XYZ",
-          position: "TECHNICAL LEAD",
-          image: "/images/vespera2.jpg",
+          name: "DIVYANSH",
+          position: "",
+          image: DIVYANSH.src,
+
         },
         {
-          name: "XYZ",
-          position: "TECHNICAL CO-LEAD",
-          image: "/images/vespera2.jpg",
+          name: "SIDDHARTH GUPTA",
+          position: "",
+          image: SIDDHARTHGUPTA.src,
         },
       ],
     },
@@ -139,7 +142,7 @@ const Alumini = () => {
           ))}
         </div>
 
-        <div className="w-[90%] md:w-[60%] mt-6 mb-10 flex items-center justify-around">
+        <div className="w-[90%] md:w-[60%] mt-6 mb-20 flex items-center justify-around">
           {alumini.map((e, idx) => (
             <div key={idx} className="text-white text-sm md:text-lg">
               {e.title}

@@ -2,7 +2,16 @@ import React from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
+import { FaArrowRightLong } from "react-icons/fa6";
 import './sprinkleAnimation.css';
+
+
+import I3 from '@/assets/teamBg/i3.png';
+import I5 from '@/assets/teamBg/i5.png';
+import I7 from '@/assets/teamBg/i7.png';
+import I9 from '@/assets/teamBg/i9.png';
+import ULTRA from '@/assets/teamBg/Ultra.png';
+import ARC from '@/assets/teamBg/Arc.png';
 
 import PARTHAWASTHI from "@/assets/team/leads/Parth Awasthi.jpg";
 import DIPTISINGH from "@/assets/team/leads/Dipti singh.jpg";
@@ -91,7 +100,7 @@ const TeamSection = ({ layout,data }) => (
 
 const WhiteBox = ({ data,isFillable }) => {
     return (
-      <div className={`${isFillable?'flip-card':''} w-[370px] h-[460px]`}>
+      <div className={`${isFillable?'flip-card':''} w-[330px] sm:w-[370px] h-[460px]`}>
         <div className="flip-card-inner">
           <div className="flip-card-front bg-white rounded-2xl w-full h-full flex flex-col items-center justify-center">
             <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
@@ -170,6 +179,7 @@ const Teams = () => {
     const events = [
         {
           title: "TEAM i3",
+          image: I3.src,
           Members: [
             {
                 "Name":"ARYAN SACHAN",
@@ -198,6 +208,7 @@ const Teams = () => {
         },
         {
           title: "TEAM i5",
+          image: I5.src,
           Members: [
             {
                 "Name":"AMOGH GUPTA",
@@ -241,6 +252,7 @@ const Teams = () => {
         },
         {
             title: "TEAM i7",
+            image: I7.src,
             Members: [
               {
                   "Name":"AKSHIT SHARMA",
@@ -251,6 +263,7 @@ const Teams = () => {
           },
           {
             title: "TEAM ARC",
+            image: ARC.src,
             Members: [
               {
                 "Name":"KHUSHI THAKUR",
@@ -283,6 +296,7 @@ const Teams = () => {
           },
         {
             title: "TEAM i9",
+            image: I9.src,
             Members: [
               {
                 "Name":"UTKARSH CHAUHAN",
@@ -336,6 +350,7 @@ const Teams = () => {
           },
           {
             title: "TEAM ULTRA",
+            image: ULTRA.src,
             Members: [
                 {
                     "Name":"YASH GUPTA",
@@ -362,7 +377,7 @@ const Teams = () => {
       ];
 
     return (
-        <section className="w-full h-[800vh] bg-black pt-10 flex flex-col items-center">
+        <section className="w-full pb-20 bg-black pt-10 flex flex-col items-center overflow-hidden">
             <div className="w-full flex items-center justify-center">
                 <div className="w-[400px] relative flex items-center justify-center">
                     <div
@@ -385,19 +400,39 @@ const Teams = () => {
                 </div>
             </div>
             
-            <div className="w-[80%] h-[300vh] mt-10 mb-10">
+            <div className="w-[80%] hidden lg:block h-[300vh] mt-10 mb-10">
                 {sections.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>
+                ))}
+            </div>
+            <div className="w-full block lg:hidden mt-10 mb-10">
+                {leadsName.map((data, idx) => (
+                  <div key={idx} className='mb-10 w-full flex items-center justify-center'>
+                    <WhiteBox key={idx} data={data} isFillable={true}/>
+                  </div>
                 ))}
             </div>
             <div className="flex flex-col gap-10 items-center mt-10 w-full">
                 {events.map((event, index) => (
                     <div
                     key={index}
-                    className="w-[90%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 flex overflow-x-auto items-center scrollbar-hide gap-7 px-4 py-6"
+                    className="w-[85%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 flex overflow-x-auto items-center scrollbar-hide gap-7 px-4 py-6"
                     >
-                    <div className="text-center h-full min-w-[380px] flex-grow text-4xl md:text-6xl font-extrabold text-white flex justify-center items-center">
-                        {event.title}
+                    <div className="text-center rounded-2xl h-full min-w-[300px] sm:min-w-[380px] flex-grow text-4xl md:text-6xl font-extrabold text-white flex flex-col gap-20 justify-center items-center"
+                      style={{
+                        backgroundImage:`url(${event.image})`,
+                        backgroundSize:'contain',
+                        backgroundPosition:'center'
+                      }}
+                    
+                    >
+                        <h1 className='mt-10'>
+                          
+                        </h1>
+                          <div className='text-xl sm:hidden flex items-center'>
+                            Swipe <FaArrowRightLong className='ml-2'/>
+                          </div>
+                        
                     </div>
 
                     {event.Members.map((member, idx) => (

@@ -38,7 +38,7 @@ const LoadingScreen = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center z-10">
+      <div className="flex flex-col text-center items-center z-10">
         {/* {!isLogoVisible ? ( */}
           <h1 className="text-7xl text-sky-400 font-extrabold animate-pulse transition-all duration-1000">
             {texts[currentIndex]}

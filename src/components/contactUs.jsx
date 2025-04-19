@@ -2,107 +2,88 @@ import React from 'react';
 import BACKGROUNDIMAGEBACK from '@/assets/contact-us-back.png';
 import BACKGROUNDIMAGEFRONT from '@/assets/contact-us-front.png';
 import LOGO from '@/assets/logo.png';
-
 import STARS from "@/assets/stars.png";
+
 import './sprinkleAnimation.css';
 
 import { CiMail } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 function ContactUs() {
   return (
-    <section className='w-full h-[100vh] bg-black pt-10'>
-      <div className="w-full flex items-center justify-center">
-          <div className="w-[400px] relative flex items-center justify-center">
-            <div
-              className="absolute left-[-130px] top-[-50px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
-              style={{
-                backgroundImage: `url(${STARS.src})`,
-              }}
-            />    
+    <section className="w-full min-h-[100vh] bg-black pt-10 relative overflow-hidden">
+      {/* Title with Stars */}
+      <div className="w-full flex items-center justify-center mb-10 relative">
+        <div className="w-[300px] sm:w-[400px] relative flex items-center justify-center">
           <div
-            className="absolute right-[-150px] top-[-90px] w-50 h-50 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
-            style={{
-              backgroundImage: `url(${STARS.src})`,
-            }}
+            className="absolute md:left-[-130px] top-[-50px] left-[-40px] w-40 h-40 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150"
+            style={{ backgroundImage: `url(${STARS.src})` }}
           />
-                  
-          <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
+          <div
+            className="absolute md:right-[-150px] top-[-90px] right-[-60px] w-40 h-40 bg-no-repeat bg-contain z-0 animate-sprinkle filter brightness-150 delay-1000"
+            style={{ backgroundImage: `url(${STARS.src})` }}
+          />
+          <h2 className="text-center font-extrabold text-3xl sm:text-5xl lg:text-6xl text-sky-400 relative z-10">
             CONTACT US
           </h2>
         </div>
       </div>
-      <div className='w-full h-142'
 
-        style={{
-            backgroundImage:`url(${BACKGROUNDIMAGEBACK.src})`,
-            backgroundPosition:'center',
-            backgroundRepeat:'no-repeat',
-            backgroundSize:'100% 130%'
-        }}
-      
+      {/* Background Image Layers */}
+      <div
+        className="w-full absolute bottom-0 bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${BACKGROUNDIMAGEBACK.src})` }}
       >
-
-        <div className='w-full h-142 flex flex-col items-center justify-center'
-
-        style={{
-            backgroundImage:`url(${BACKGROUNDIMAGEFRONT.src})`,
-            backgroundPosition:'center',
-            backgroundRepeat:'no-repeat',
-            backgroundSize:'100% 130%'
-        }}
-
+        <div
+          className="w-full flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover py-20 px-4"
+          style={{ backgroundImage: `url(${BACKGROUNDIMAGEFRONT.src})` }}
         >
-            <div className='absolute w-full h-50 mt-[-110px] overflow-hidden'>
-              <div className="w-full flex items-center justify-between">
-                {/* <div className="w-[400px] relative flex items-center justify-center"> */}
-                  <div
-                    className=" w-60 h-60 bg-no-repeat ml-40 bg-contain z-0 animate-sprinkle filter brightness-150 delay-500"
-                    style={{
-                      backgroundImage: `url(${STARS.src})`,
-                    }}
-                  />    
-                  <div
-                    className="w-60 h-60 bg-no-repeat mr-36 bg-contain z-0 animate-sprinkle filter brightness-150 delay-750"
-                    style={{
-                      backgroundImage: `url(${STARS.src})`,
-                    }}
-                  />
-                </div>
-              {/* </div> */}
-            </div>
-            <div className='w-150 h-70 ml-[-100px] flex flex-row items-center justify-around mt-40 mb-[-10px]'>
-                <img src={LOGO.src} className='w-40 h-30 mr-20'></img>
-                <div className='text-white text-4xl font-bold'>
-                    <h3>
-                        Where Ideas Spark,
-                    </h3>
-                    <h3>
-                        and Tech Ignites!⚡
-                    </h3>
-                </div>
-                <div className='text-white text-xl font-bold absolute mt-40 pl-[65%]'>
-                    <h4 className='flex items-center gap-2'>
-                        <CiMail /> iosc.edc@gmail.com
-                    </h4>
-                    <h4 className='flex items-center gap-2'>
-                        <FaInstagram /> @iosc_edc
-                    </h4>
-                    <h4 className='flex items-center gap-2'>
-                        <FaLinkedinIn /> @iosc-usar
-                    </h4>
-                </div>
-            </div>
-            <div className="absolute bottom-1 text-white font-bold flex items-center justify-center flex-col w-full h-10 mt-auto">
-                <h4>Made with 💙  by IoSC-EDC</h4>
-                <h4>One Club, One Family</h4>                
-            </div>
-        </div>
+          {/* Sparkles */}
+          <div className="relative w-full justify-between mb-10 px-4 hidden md:flex">
+            <div
+              className="w-32 h-32 bg-no-repeat bg-contain animate-sprinkle filter brightness-150 delay-500"
+              style={{ backgroundImage: `url(${STARS.src})` }}
+            />
+            <div
+              className="w-32 h-32 bg-no-repeat bg-contain animate-sprinkle filter brightness-150 delay-750"
+              style={{ backgroundImage: `url(${STARS.src})` }}
+            />
+          </div>
 
+          {/* Main Content */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full max-w-[1100px] px-4">
+            {/* Logo */}
+            <img src={LOGO.src} alt="Logo" className="w-28 sm:w-36 md:w-40" />
+
+            {/* Slogan */}
+            <div className="text-white text-center md:text-left">
+              <h3 className="text-2xl sm:text-3xl font-bold">Where Ideas Spark,</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold">and Tech Ignites!⚡</h3>
+            </div>
+
+            {/* Contact Info */}
+            <div className="text-white text-lg sm:text-xl font-bold space-y-2">
+              <h4 className="flex items-center gap-2">
+                <CiMail /> iosc.edc@gmail.com
+              </h4>
+              <h4 className="flex items-center gap-2">
+                <FaInstagram /> @iosc_edc
+              </h4>
+              <h4 className="flex items-center gap-2">
+                <FaLinkedinIn /> @iosc-usar
+              </h4>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="mt-16 text-white text-center text-sm sm:text-base font-semibold">
+            <h4>Made with 💙 by IoSC-EDC</h4>
+            <h4>One Club, One Family</h4>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default ContactUs;
