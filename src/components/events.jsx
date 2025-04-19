@@ -135,7 +135,7 @@ const Events = () => {
             {activeEvent.title}
           </div>
 
-          {activeEvent.images.map((imgSrc, idx) => (
+          {activeEvent?.images?.map((imgSrc, idx) => (
             <div
               key={idx}
               className="flip-card w-full h-[250px] md:h-[300px] lg:h-[90%] bg-transparent rounded-xl overflow-hidden shadow-lg"
@@ -162,7 +162,7 @@ const Events = () => {
 
         {/* Event Selector Bar */}
         <div className="w-[90%] mt-10 md:mt-16 h-1 bg-gray-400 flex items-center justify-around">
-          {events.map((e, idx) => (
+          {events?.map((e, idx) => (
             <div
               key={idx}
               onClick={() => setEvent(e.title)}
@@ -175,7 +175,7 @@ const Events = () => {
 
         {/* Event Titles */}
         <div className="w-[90%] mt-4 md:mt-6 flex flex-wrap gap-2 md:gap-5 justify-around">
-          {events.map((e, idx) => (
+          {events?.map((e, idx) => (
             <div
               key={idx}
               className="text-white text-[5px] md:text-[14px] text-center max-w-[100px] break-words"

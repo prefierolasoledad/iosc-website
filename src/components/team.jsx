@@ -409,19 +409,19 @@ const Teams = () => {
             </div>
             
             <div className="w-[80%] hidden lg:block h-[300vh] mt-10 mb-10">
-                {sections.map((layout, idx) => (
+                {sections?.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>
                 ))}
             </div>
             <div className="w-full block lg:hidden mt-10 mb-10">
-                {leadsName.map((data, idx) => (
+                {leadsName?.map((data, idx) => (
                   <div key={idx} className='mb-10 w-full flex items-center justify-center'>
                     <WhiteBox key={idx} data={data} isFillable={true}/>
                   </div>
                 ))}
             </div>
             <div className="flex flex-col gap-10 items-center mt-10 w-full">
-                {events.map((event, index) => (
+                {events?.map((event, index) => (
                     <div
                     key={index}
                     className="w-[85%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 flex overflow-x-auto items-center scrollbar-hide gap-7 px-4 py-6"
@@ -444,7 +444,7 @@ const Teams = () => {
                         
                     </div>
 
-                    {event.Members.map((member, idx) => (
+                    {event?.Members?.map((member, idx) => (
                         <div key={idx} className='h-full w-[370px]'>
                             <WhiteBox key={idx} data={member} isFillable={false}/>
                         </div>

@@ -63,7 +63,7 @@ function Projects() {
 
       <div className="w-[83.5%] overflow-x-auto scrollbar-hide">
         <div className="w-max h-[500px] flex gap-4 bg-gray-300 pt-5 pb-5 pl-5 pr-5">
-          {projects.map((project, index) => (
+          {projects?.map((project, index) => (
             <div
               key={index}
               className="w-[300px] h-full bg-black pt-10 pb-6 relative rounded-xl"

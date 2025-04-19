@@ -75,7 +75,7 @@ function Blogs() {
 
         {/* Blog List */}
         <div className="w-full lg:w-1/2 flex flex-col gap-6 mt-16 pl-5 md:pl-0 mb-16 md:mb-0 md:ml-9">
-          {blogs.map((blog, index) => (
+          {blogs?.map((blog, index) => (
             <div key={index} className="flex justify-between items-start sm:items-center border-b border-gray-700 pb-4 flex-col sm:flex-row">
               <div className="flex flex-col mb-2 sm:mb-0">
                 <span className="font-bold text-2xl sm:text-3xl">{blog.name}</span>
