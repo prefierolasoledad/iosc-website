@@ -5,12 +5,13 @@ import './sprinkleAnimation.css';
 
 import PROJECTI5 from '@/assets/projects/ProjectI5.png';
 import QUIZPLAY from '@/assets/projects/quizplay.jpg';
+import AICodeReview from '@/assets/projects/AICodeReview.png';
 
 const projects = [
   {
-    title: "XYZ PROJECT 1",
-    description: "Details 1",
-    github: "https://github.com/user/project1",
+    title: "HYDRO HEROES",
+    description: "it does realtime flow tracking to predict leaks and Quality monitoring",
+    github: "https://github.com/Waqar080206/Hydro-Heroes",
     image: PROJECTI5.src,
   },
   {
@@ -20,10 +21,10 @@ const projects = [
     image: QUIZPLAY.src,
   },
   {
-    title: "XYZ PROJECT 3",
-    description: "Details 3",
-    github: "https://github.com/user/project3",
-    image: "",
+    title: "AI CODE REVIEW",
+    description: "A full-stack AI-powered code review tool built with Node.js, React, and Google's Gemini API.",
+    github: "https://github.com/utkarsh-chauhannn/Ai-Code-Review",
+    image: AICodeReview.src,
   },
   {
     title: "XYZ PROJECT 4",

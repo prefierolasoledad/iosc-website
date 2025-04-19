@@ -7,7 +7,7 @@ const LoadingScreen = () => {
     "BUILDING DREAMS",
     "TOGETHER",
     "WELCOME TO",
-    "IOSC-EDC"
+    "IoSC-EDC"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
