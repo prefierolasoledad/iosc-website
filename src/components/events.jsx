@@ -36,7 +36,7 @@ const Events = () => {
   const events = [
     {
       title: "REACT BOOT CAMP",
-      images: [REACTBOOTCAMP.src, REACTBOOTCAMP2.src],
+      images: [REACTBOOTCAMP, REACTBOOTCAMP2],
       descriptions: [
         "Our React Bootcamp was a hands-on learning experience where students dove into the world of modern web development. From building dynamic UIs to understanding React hooks and components, participants gained practical skills and built their very first React apps. Students coded along and made it a success!",
         '"Learning React is like learning to think differently — and our students did just that."',
@@ -44,7 +44,7 @@ const Events = () => {
     },
     {
       title: "AZINTEK",
-      images: [AZINTEK.src, AZINTEK2.src],
+      images: [AZINTEK, AZINTEK2],
       descriptions: [
         "Azintek marked a major milestone as our tech club's first-ever tech fest, bringing together innovation, creativity, and pure tech energy under one roof! The fest featured an action-packed lineup including a high-stakes Hackathon, an inspiring Designathon, intense Coding Competitions, thrilling Gaming Events, and engaging sessions with a Global Speaker who lit up the stage with insights from the industry. The night wrapped up on a high note with a Musical Eve that kept the vibes alive long after the code stopped compiling.",
         '"It wasn’t just a fest — it was the beginning of something iconic."',
@@ -52,7 +52,7 @@ const Events = () => {
     },
     {
       title: "INTEL DEV CLOUD",
-      images: [INTELDEVCLOUD.src, INTELDEVCLOUD2.src],
+      images: [INTELDEVCLOUD, INTELDEVCLOUD2],
       descriptions: [
         "As part of our learning series, we hosted an interactive session on Intel DevCloud, where students explored the fundamentals of cloud computing and got hands-on experience with Intel’s powerful cloud platform. From deploying AI models to understanding edge-to-cloud workflows, participants gained practical insights into real-world applications of cloud technology.",
         '"From zero to cloud hero — that’s how fast we move."',
@@ -67,7 +67,7 @@ const Events = () => {
     // },
     {
       title: "SHARK TANK",
-      images: [SHARKTANK.src, SHARKTANK2.src],
+      images: [SHARKTANK, SHARKTANK2],
       descriptions: [
         "In our very own Shark Tank event, students stepped into the spotlight to pitch their innovative ideas to a panel of judges. From tech startups to creative solutions for real-world problems, the event was a showcase of entrepreneurial spirit, critical thinking, and bold vision. It was inspiring to see young minds turn ideas into impactful pitches!",
         '"Ideas don’t need wings to fly — just courage to pitch."',
@@ -75,7 +75,7 @@ const Events = () => {
     },
     {
       title: "STUDENT OF THE YEAR",
-      images: [StudentOfTheYear.src, StudentOfTheYear2.src],
+      images: [StudentOfTheYear, StudentOfTheYear2],
       descriptions: [
         "Our Student of the Year award celebrated a well-rounded achiever who excelled not just in coding and technical skills, but also in leadership, creativity, and extracurricular involvement. This recognition highlights the spirit of all-round excellence — where passion for tech meets dedication beyond the screen. A true role model for the community!",
         '"Greatness isn’t just in the code — it’s in the character."',
@@ -83,7 +83,7 @@ const Events = () => {
     },
     {
       title: "VESPERA’24",
-      images: [VESPERA.src, VESPERA2.src],
+      images: [VESPERA, VESPERA2],
       descriptions: [
         "Vespera, our second annual tech fest, was nothing short of spectacular! Building on the success of our first edition, this time we went bigger and bolder — with a thrilling Hackathon, creative Designathon, thought-provoking Case Study competition, and a unique Filmmaking Challenge. The fest also brought out the fun side of tech with an adventurous Treasure Hunt and an unforgettable Stand-up Comedy Night that had the crowd in splits.",
         '"Vespera wasn’t just an event — it was a movement of makers."',
@@ -91,7 +91,7 @@ const Events = () => {
     },
     {
       title: "BHASHA BANDHU",
-      images: [Bashabandhu1.src, Bashabandhu2.src],
+      images: [Bashabandhu1, Bashabandhu2],
       descriptions: [
         "Bhasha Bandhu was a platform where students passionately pitched their ideas, blending innovation with impactful communication. The event encouraged participants to express their thoughts clearly and confidently, regardless of language — celebrating the power of ideas across cultures and dialects. It was all about breaking barriers through expression and amplifying student voices.",
         '"Language may differ, but passion always sounds the same."',
@@ -99,7 +99,7 @@ const Events = () => {
     },
     {
       title: "GIT-TOGETHER",
-      images: [GITTOGETHER.src, GITTOGETHER2.src],
+      images: [GITTOGETHER, GITTOGETHER2],
       descriptions: [
         "Git Together is our open-source project initiative in collaboration with LLMWare, aimed at bringing students into the world of real-world development. Through this program, students will contribute to impactful open-source projects, explore the power of LLMs (Large Language Models), and learn collaborative development using Git and GitHub.",
         '"We don’t just commit code — we commit to growth."',

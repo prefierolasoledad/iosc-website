@@ -14,25 +14,25 @@ const projects = [
     title: "HYDRO HEROES",
     description:"it does realtime flow tracking to predict leaks and Quality monitoring",
     github: "https://github.com/Waqar080206/Hydro-Heroes",
-    image: PROJECTI5.src,
+    image: PROJECTI5,
   },
   {
     title: "QUIZ PLAY",
     description:"It allows users to take quizzes, view results, and manage quiz data through an interactive UI.",
     github: "https://github.com/prefierolasoledad/QuizApp",
-    image: QUIZPLAY.src,
+    image: QUIZPLAY,
   },
   {
     title: "AI CODE REVIEW",
     description:"A full-stack AI-powered code review tool built with Node.js, React, and Google's Gemini API.",
     github: "https://github.com/utkarsh-chauhannn/Ai-Code-Review",
-    image: AICodeReview.src,
+    image: AICodeReview,
   },
   {
     title: "DriveEasy",
     description:"DriveEasy is a MERN stack-based car rental platform that enables users to easily browse, book, and manage vehicle rentals online.",
     github: "https://github.com/AryanSachan12/vehicle-rental",
-    image: DriveEasy.src,
+    image: DriveEasy,
   },
 ];
 

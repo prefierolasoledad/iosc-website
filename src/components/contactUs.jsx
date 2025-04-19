@@ -54,7 +54,7 @@ function ContactUs() {
           {/* Main Content */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 w-full max-w-[1100px] px-4">
             {/* Logo */}
-            <Image src={LOGO.src} alt="Logo" className="w-28 sm:w-36 md:w-40" />
+            <Image src={LOGO} alt="Logo" className="w-28 sm:w-36 md:w-40" />
 
             {/* Slogan */}
             <div className="text-white text-center md:text-left">

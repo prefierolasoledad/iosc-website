@@ -160,25 +160,25 @@ const Teams = () => {
       {
         Name: "PARTH AWASTHI",
         Position: "Lead",
-        image: PARTHAWASTHI.src,
+        image: PARTHAWASTHI,
         quote: "Leadership is not about a title or a designation. It’s about impact, influence, and inspiration.",
       },
       {
         Name: "DIPTI SINGH",
         Position: "Co-Lead",
-        image: DIPTISINGH.src,
+        image: DIPTISINGH,
         quote: "The future belongs to those who believe in the beauty of their dreams.",
       },
       {
         Name: "JAY TOMAR",
         Position: "Technical Lead",
-        image: JAYTOMAR.src,
+        image: JAYTOMAR,
         quote: "Don't watch the clock; do what it does. Keep going.",
       },
       {
         Name: "AKSHAT SARASWAT",
         Position: "Technical Co-Lead",
-        image: AKSHATSARASWAT.src,
+        image: AKSHATSARASWAT,
         quote: "Success is the sum of small efforts, repeated day in and day out.",
       },
     ];
@@ -192,24 +192,24 @@ const Teams = () => {
             {
                 "Name":"ARYAN SACHAN",
                 "Position":"Core Member",
-                image:ARYANSACHAN.src,
+                image:ARYANSACHAN,
                 github:'https://github.com/AryanSachan12'
             },
             {
                 "Name":"KARAN BHATT",
                 "Position":"Core Member",
-                image:KARANBHATT.src,
+                image:KARANBHATT,
                 github:'https://github.com/prefierolasoledad'
             },
             {
               "Name":"RAHUL BHATIA",
               "Position":"Core Member",
-              image:RAHULBHATIA.src
+              image:RAHULBHATIA
             },
             {
               "Name":"MAYANK BISHT",
               "Position":"Core Member",
-              image:MAYANKBISHT.src,
+              image:MAYANKBISHT,
               github:'https://github.com/mayankbisht-tech'
             }
           ]
@@ -221,39 +221,39 @@ const Teams = () => {
             {
                 "Name":"AMOGH GUPTA",
                 "Position":"Core Member",
-                image:AMOGHGUPTA.src
+                image:AMOGHGUPTA
             },
             {
                 "Name":"MAYANK SHARMA",
                 "Position":"Core Member",
-                image:MAYANKSHARMA.src
+                image:MAYANKSHARMA
             },
             {
                 "Name":"OCEAN BHATNAGAR",
                 "Position":"Core Member",
-                image:OCEANBHATNAGAR.src
+                image:OCEANBHATNAGAR
             },
             {
                 "Name":"SAMARTH YADAV",
                 "Position":"Core Member",
-                image:SAMARTHYADAV.src
+                image:SAMARTHYADAV
             },
             {
               "Name":"PRATHAM KUMAR",
               "Position":"Core Member",
-              image:PRATHAMKUMAR.src,
+              image:PRATHAMKUMAR,
               github:'https://github.com/Pratham0511'
           },
           {
               "Name":"UTSAV KUMAR",
               "Position":"Core Member",
-              image:UTSAVKUMAR.src,
+              image:UTSAVKUMAR,
               github:'https://github.com/Utsav-Kumar19'
           },
           {
               "Name":"WAQAR AKHTAR",
               "Position":"Core Member",
-              image:WAQARAKHTAR.src,
+              image:WAQARAKHTAR,
               github:'https://github.com/Waqar080206'
           },
           ]
@@ -265,7 +265,7 @@ const Teams = () => {
               {
                   "Name":"AKSHIT SHARMA",
                   "Position":"Core Member",
-                  image:AKSHITSHARMA.src
+                  image:AKSHITSHARMA
               }
             ]
           },
@@ -276,29 +276,29 @@ const Teams = () => {
               {
                 "Name":"KHUSHI THAKUR",
                 "Position":"Core Member",
-                image:KHUSHITHAKUR.src
+                image:KHUSHITHAKUR
               },
               {
                 "Name":"PARI DUDEJA",
                 "Position":"Core Member",
-                image:PARIDUDEJA.src,
+                image:PARIDUDEJA,
                 github:'https://github.com/pari-dudeja2005'
               },
               {
                   "Name":"KRITI RASTOGI",
                   "Position":"Core Member",
-                  image:KRITIRASTOGI.src,
+                  image:KRITIRASTOGI,
                   github:'https://github.com/kritirastogi1501'
               },
               {
                 "Name":"ALISHA GODARA",
                 "Position":"Core Member",
-                image:ALISHAGODARA.src
+                image:ALISHAGODARA
               },
               {
               "Name":"SANCHIT NARANG",
               "Position":"Core Member",
-              image:SANCHITNARANG.src
+              image:SANCHITNARANG
               },
             ]
           },
@@ -309,49 +309,49 @@ const Teams = () => {
               {
                 "Name":"UTKARSH CHAUHAN",
                 "Position":"Core Member",
-                image:UTKARSHCHAUHAN.src,
+                image:UTKARSHCHAUHAN,
                 github:'https://github.com/utkarsh-chauhannn'
               },
               {
                   "Name":"AKSHAT TALWAR",
                   "Position":"Core Member",
-                  image:AKSHATTALWAR.src,
+                  image:AKSHATTALWAR,
                   github:'https://github.com/akshattalwar001'
               },
               {
                   "Name":"DISHITA SINHA",
                   "Position":"Core Member",
-                  image:DISHITASINHA.src,
+                  image:DISHITASINHA,
                   github:'https://github.com/Dsinha04'
               },
               {
                 "Name":"HARSHIT NEGI",
                 "Position":"Core Member",
-                image:HARSHITNEGI.src,
+                image:HARSHITNEGI,
                 github:'https://github.com/Harshit-Negi27'
               },
               {
                   "Name":"PARTH MAWAI",
                   "Position":"Core Member",
-                  image:PARTHMAWAI.src,
+                  image:PARTHMAWAI,
                   github:'https://github.com/parthmawai'
               },
               {
                 "Name":"PIYUSH GUPTA",
                 "Position":"Core Member",
-                image:PIYUSHGUPTA.src,
+                image:PIYUSHGUPTA,
                 github:'https://github.com/Piyush-xo-19',
             },
             {
                 "Name":"PRIYA CHAURASIA",
                 "Position":"Core Member",
-                image:PRIYACHAURASIA.src,
+                image:PRIYACHAURASIA,
                 github:'https://github.com/NoticeableStar/sashakti_app'
             },
             {
               "Name":"RICHIK DAS",
               "Position":"Core Member",
-              image:RICHIKDAS.src,
+              image:RICHIKDAS,
               github:'https://github.com/Richik06'
             },
             ]
@@ -363,22 +363,22 @@ const Teams = () => {
                 {
                     "Name":"YASH GUPTA",
                     "Position":"Core Member",
-                    image:YASHGUPTA.src
+                    image:YASHGUPTA
                 },
                 {
                     "Name":"VASU TOHANGAR",
                     "Position":"Core Member",
-                    image:VASUTOHANGAR.src
+                    image:VASUTOHANGAR
                 },
                 {
                   "Name":"ARMAAN",
                   "Position":"Core Member",
-                  image:ARMAAN.src
+                  image:ARMAAN
               },
               {
                   "Name":"DIPANSHU SAROVAR",
                   "Position":"Core Member",
-                  image:DIPANSHUSAROVAR.src
+                  image:DIPANSHUSAROVAR
               },
             ]
           },

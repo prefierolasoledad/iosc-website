@@ -77,7 +77,7 @@ const HeroSection=()=>{
                 </div>
                 <div className={`absolute top-0 w-full pt-5 pl-5 md:pl-10`}>
                     <div className="w-full md:h-24 h-16">
-                        <Image src={LOGO.src} className="md:h-20 h-14 object-contain"></Image>
+                        <Image src={LOGO} height="40px" width="20px" alt="logo" className="md:h-20 h-14 object-contain"></Image>
                     </div>
                     <h1 className={`${orbitron.className} text-xl md:text-3xl lg:text-5xl text-outline font-extrabold`}>
                         WE'RE IoSC-EDC<br/>
