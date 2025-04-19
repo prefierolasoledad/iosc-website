@@ -4,6 +4,7 @@ import STARS from "@/assets/stars.png";
 import './sprinkleAnimation.css';
 
 import PROJECTI5 from '@/assets/projects/ProjectI5.png';
+import QUIZPLAY from '@/assets/projects/quizplay.jpg';
 
 const projects = [
   {
@@ -13,10 +14,10 @@ const projects = [
     image: PROJECTI5.src,
   },
   {
-    title: "XYZ PROJECT 2",
-    description: "Details 2",
-    github: "https://github.com/user/project2",
-    image: "",
+    title: "QUIZ PLAY",
+    description: "It allows users to take quizzes, view results, and manage quiz data through an interactive UI.",
+    github: "https://github.com/prefierolasoledad/QuizApp",
+    image: QUIZPLAY.src,
   },
   {
     title: "XYZ PROJECT 3",
@@ -73,7 +74,7 @@ function Projects() {
               <h2 className='text-white text-center pt-5 text-2xl font-bold'>
                 {project.title}
               </h2>
-              <p className='text-white text-center text-lg'>
+              <p className='text-white text-center text-md pl-5 pr-5 mt-5'>
                 {project.description}
               </p>
 
