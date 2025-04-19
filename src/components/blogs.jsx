@@ -11,31 +11,28 @@ function Blogs() {
 
   const blogs = [
     {
-      name: 'AI in Daily Life',
-      detail: 'Exploring how AI shapes our everyday decisions.',
-      desc:'NO description 1'
+      name: "Git-Together: From Local to Global",
+      detail: "Real-world dev, real-time learning.",
+      desc: "Git-Together kicked off our open-source journey. Collaborating with LLMWare, students jumped into real dev workflows, contributed meaningfully, and saw their code go live. It was more than just Git and GitHub — it was about building with a global mindset and growing through contribution."
     },
     {
-      name: 'Next-Gen Web',
-      detail: 'What’s coming with Web 4.0 and beyond.',
-      desc:'NO description 2'
+      name: "Voices of Change: Bhasha Bandhu",
+      detail: "Because expression is power — in any language.",
+      desc: "Bhasha Bandhu celebrated the freedom to express. In a multilingual mashup of ideas, participants pitched and presented in their language of choice. Confidence, clarity, and creativity took center stage — proving once again that innovation needs no translation."
     },
     {
-      name: 'UX Secrets',
-      detail: 'Tips to design experiences users love.',
-      desc:'NO description 3'
+      name: "Vespera'24 — The Pulse of Innovation",
+      detail: "A tech fest that felt like a movement.",
+      desc: "Vespera’24 wasn’t just an event — it was our identity in motion. With hackathons, design jams, and even filmmaking challenges, it blurred the lines between tech, creativity, and fun. Stand-up comedy and a treasure hunt added flavor to the mix. It was loud, proud, and 100% IoSC-EDC."
     },
     {
-      name: 'Code Zen',
-      detail: 'How writing clean code boosts dev productivity.',
-      desc:'NO description 4'
+      name: "Not Just Code: Student of the Year",
+      detail: "Why all-rounders are the real MVPs.",
+      desc: "Tech skills matter. But so do leadership, collaboration, and creative vision. The Student of the Year award celebrated someone who excelled across all fronts — a coder, leader, thinker, and doer. It was a reminder that IoSC-EDC thrives on people who push limits, not just write functions."
     },
-    {
-        name: 'Code Zen',
-        detail: 'How writing clean code boosts dev productivity.',
-        desc:'NO description 5'
-      },
   ];
+  
+  
 
   return (
     <section className="w-full min-h-[100vh] bg-black pt-10 text-white overflow-hidden">
