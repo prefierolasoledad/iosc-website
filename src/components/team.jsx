@@ -18,6 +18,7 @@ import PARTHAWASTHI from "@/assets/team/leads/Parth Awasthi.jpg";
 import DIPTISINGH from "@/assets/team/leads/Dipti singh.jpg";
 import AKSHATSARASWAT from "@/assets/team/leads/AKSHAT SARASWAT.jpg";
 import JAYTOMAR from "@/assets/team/leads/Jay Tomar.jpg";
+import ISHANGUPTA from "@/assets/team/leads/Ishan Gupta.jpg";
 
 import ARYANSACHAN from "@/assets/team/i3/Aryan Sachan.jpg";
 import KARANBHATT from "@/assets/team/i3/KARAN BHATT.jpg";
@@ -153,7 +154,8 @@ const Teams = () => {
         ["connector-left", "center-node-left", "white-box"],
         ["white-box", "center-node", "connector-right"],
         ["connector-left", "center-node-left", "white-box"],
-        ["white-box", "", ""],
+        ["white-box", "center-node", "connector-right"],
+        ["", "", "white-box"],
     ];
 
     const leadsName = [
@@ -180,6 +182,12 @@ const Teams = () => {
         Position: "Technical Co-Lead",
         image: AKSHATSARASWAT,
         quote: "Success is the sum of small efforts, repeated day in and day out.",
+      },
+      {
+        Name: "ISHAN GUPTA",
+        Position: "Technical Co-Lead",
+        image: ISHANGUPTA,
+        quote: "You were born to stand out, not blend in",
       },
     ];
     
@@ -408,7 +416,7 @@ const Teams = () => {
                 </div>
             </div>
             
-            <div className="w-[80%] hidden lg:block h-[300vh] mt-10 mb-10">
+            <div className="w-[80%] hidden lg:block h-[350vh] mt-10 mb-10">
                 {sections?.map((layout, idx) => (
                     <TeamSection layout={layout} key={idx} data={leadsName[idx]}/>
                 ))}
