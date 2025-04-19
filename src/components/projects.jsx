@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 import STARS from "@/assets/stars.png";
 import "./sprinkleAnimation.css";
 
@@ -69,7 +70,7 @@ function Projects() {
             >
               <div className="w-full h-50 bg-gray-100">
                 {project.image != "" && (
-                  <img
+                  <Image
                     src={project.image}
                     alt="Project"
                     className="w-full h-full object-cover"

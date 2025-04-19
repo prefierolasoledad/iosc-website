@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import STARS from "@/assets/stars.png";
+import Image from "next/image";
 
 import Bashabandhu1 from "@/assets/events/bhasha bandhu.jpg";
 import Bashabandhu2 from "@/assets/events/basha bandhu 2.jpg";
@@ -141,7 +142,7 @@ const Events = () => {
             >
               <div className="flip-card-inner w-full h-full bg-white">
                 <div className="flip-card-front w-full h-full">
-                  <img
+                  <Image
                     src={imgSrc}
                     alt={`${activeEvent.title} - ${idx + 1}`}
                     className="w-full h-full object-cover"

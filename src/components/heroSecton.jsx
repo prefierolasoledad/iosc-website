@@ -1,6 +1,7 @@
 import HEROSECTIONIMAGE from "@/assets/hersosection-image.png"
 import STARS from "@/assets/stars.png";
 import LOGO from "@/assets/logo.png";
+import Image from "next/image";
 import './sprinkleAnimation.css';
 
 import { Orbitron } from "next/font/google";
@@ -76,7 +77,7 @@ const HeroSection=()=>{
                 </div>
                 <div className={`absolute top-0 w-full pt-5 pl-5 md:pl-10`}>
                     <div className="w-full md:h-24 h-16">
-                        <img src={LOGO.src} className="md:h-20 h-14 object-contain"></img>
+                        <Image src={LOGO.src} className="md:h-20 h-14 object-contain"></Image>
                     </div>
                     <h1 className={`${orbitron.className} text-xl md:text-3xl lg:text-5xl text-outline font-extrabold`}>
                         WE'RE IoSC-EDC<br/>

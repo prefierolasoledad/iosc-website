@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -105,7 +106,7 @@ const WhiteBox = ({ data,isFillable }) => {
           <div className="flip-card-front bg-white rounded-2xl w-full h-full flex flex-col items-center justify-center">
             <div className='w-[80%] h-[70%] bg-gray-300 border-2 border-gray-500 rounded-xl overflow-hidden flex items-center justify-center'>
               {data.image ? (
-                <img
+                <Image
                   src={data.image}
                   alt={data.Name}
                   className="w-full h-full object-cover"

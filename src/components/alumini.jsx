@@ -1,6 +1,6 @@
 'use client';
-
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import STARS from "@/assets/stars.png";
 import "./flipcard.css";
 
@@ -112,7 +112,7 @@ const Alumini = () => {
                   <div className="flip-inner">
                     {/* Front */}
                     <div className="flip-front bg-white rounded-xl overflow-hidden shadow-lg flex flex-col justify-center items-center">
-                      <img
+                      <Image
                         src={lead.image}
                         alt={lead.name}
                         className="w-[90%] h-[80%] object-cover rounded-xl"
