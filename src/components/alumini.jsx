@@ -29,25 +29,25 @@ const Alumini = () => {
         {
           name: "ARYAN KHANNA",
           position: "LEAD",
-          image: ARYANKHANNA.src,
+          image: ARYANKHANNA,
           quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
         },
         {
           name: "AVINASH SRIVASTAVA",
           position: "",
-          image: AVINASHSRIVASTAVA.src,
+          image: AVINASHSRIVASTAVA,
           quote: "Dream big, work hard, stay focused, and surround yourself with good people.",
         },
         {
           name: "DIVYANSH",
           position: "",
-          image: DIVYANSH.src,
+          image: DIVYANSH,
           quote: "Great things never come from comfort zones.",
         },
         {
           name: "SIDDHARTH GUPTA",
           position: "",
-          image: SIDDHARTHGUPTA.src,
+          image: SIDDHARTHGUPTA,
           quote: "Push yourself, because no one else is going to do it for you.",
         },
       ],
@@ -115,6 +115,8 @@ const Alumini = () => {
                       <Image
                         src={lead.image}
                         alt={lead.name}
+                        width='90%'
+                        height='90%'
                         className="w-[90%] h-[80%] object-cover rounded-xl"
                       />
                       <div className="text-center w-full mt-2 px-2">

@@ -144,6 +144,8 @@ const Events = () => {
                 <div className="flip-card-front w-full h-full">
                   <Image
                     src={imgSrc}
+                    width="100%"
+                    height="100%"
                     alt={`${activeEvent.title} - ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />

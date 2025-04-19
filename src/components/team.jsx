@@ -109,6 +109,8 @@ const WhiteBox = ({ data,isFillable }) => {
                 <Image
                   src={data.image}
                   alt={data.Name}
+                  width="100%"
+                  height="100%"
                   className="w-full h-full object-cover"
                 />
               ) : (
