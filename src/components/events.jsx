@@ -7,6 +7,7 @@ import Bashabandhu1 from "@/assets/events/bhasha bandhu.jpg";
 import Bashabandhu2 from "@/assets/events/basha bandhu 2.jpg";
 
 import StudentOfTheYear from "@/assets/events/student of the year.jpg";
+import StudentOfTheYear2 from "@/assets/events/soty2.jpg";
 
 import INTELDEVCLOUD from "@/assets/events/intel dev cloud.jpg";
 import INTELDEVCLOUD2 from "@/assets/events/dev cloud2.jpg";
@@ -73,7 +74,7 @@ const Events = () => {
     },
     {
       title: "STUDENT OF THE YEAR",
-      images: [StudentOfTheYear.src, "/images/vespera2.jpg"],
+      images: [StudentOfTheYear.src, StudentOfTheYear2.src],
       descriptions: [
         "Our Student of the Year award celebrated a well-rounded achiever who excelled not just in coding and technical skills, but also in leadership, creativity, and extracurricular involvement. This recognition highlights the spirit of all-round excellence — where passion for tech meets dedication beyond the screen. A true role model for the community!",
         '"Greatness isn’t just in the code — it’s in the character."',

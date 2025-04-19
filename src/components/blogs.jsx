@@ -11,26 +11,32 @@ function Blogs() {
 
   const blogs = [
     {
-      name: "Git-Together: From Local to Global",
-      detail: "Real-world dev, real-time learning.",
-      desc: "Git-Together kicked off our open-source journey. Collaborating with LLMWare, students jumped into real dev workflows, contributed meaningfully, and saw their code go live. It was more than just Git and GitHub — it was about building with a global mindset and growing through contribution."
+      name: "Humanoids in Half-Marathons",
+      detail: "Robots run alongside humans in China's Yizhuang race.",
+      desc: "In an unprecedented event in Beijing, 21 humanoid robots participated in the Yizhuang half-marathon. Developed by companies like DroidUP and Noetix Robotics, these robots ran side-by-side with thousands of humans, showcasing breakthroughs in mobility, AI decision-making, and endurance. One robot even completed the race in just under 2 hours and 40 minutes, signaling a new era for human-robot collaboration in physical domains."
     },
     {
-      name: "Voices of Change: Bhasha Bandhu",
-      detail: "Because expression is power — in any language.",
-      desc: "Bhasha Bandhu celebrated the freedom to express. In a multilingual mashup of ideas, participants pitched and presented in their language of choice. Confidence, clarity, and creativity took center stage — proving once again that innovation needs no translation."
+      name: "The Rise of AGI",
+      detail: "DeepMind CEO predicts Artificial General Intelligence within a decade.",
+      desc: "Demis Hassabis, CEO of Google DeepMind, recently announced his belief that AGI (Artificial General Intelligence) could emerge in the next 5 to 10 years. Speaking at TIME100, he highlighted the transformative potential of AGI in solving global issues such as disease, climate change, and education — while also warning of ethical and regulatory challenges ahead."
     },
     {
-      name: "Vespera'24 — The Pulse of Innovation",
-      detail: "A tech fest that felt like a movement.",
-      desc: "Vespera’24 wasn’t just an event — it was our identity in motion. With hackathons, design jams, and even filmmaking challenges, it blurred the lines between tech, creativity, and fun. Stand-up comedy and a treasure hunt added flavor to the mix. It was loud, proud, and 100% IoSC-EDC."
+      name: "Robots Take Over Warehouses",
+      detail: "Tech giants roll out humanoids to automate industry.",
+      desc: "Companies like Tesla, Figure AI, and Agility Robotics are deploying humanoid robots in logistics and manufacturing to tackle labor shortages. Amazon and BMW are already testing these machines, which are designed to lift, walk, and adapt. With over $3 billion in venture funding projected this year, the humanoid workforce revolution is closer than ever."
     },
     {
-      name: "Not Just Code: Student of the Year",
-      detail: "Why all-rounders are the real MVPs.",
-      desc: "Tech skills matter. But so do leadership, collaboration, and creative vision. The Student of the Year award celebrated someone who excelled across all fronts — a coder, leader, thinker, and doer. It was a reminder that IoSC-EDC thrives on people who push limits, not just write functions."
+      name: "Open-Source Robotics Boom",
+      detail: "Hugging Face acquires Pollen Robotics to democratize AI + hardware.",
+      desc: "Hugging Face has acquired Pollen Robotics, the creators of Reachy 2, a modular humanoid robot. This collaboration merges open-source software with hardware, encouraging global developers to contribute to and access robotics innovation like never before. It represents a massive shift towards accessible, community-driven robotics development."
     },
+    {
+      name: "Securing the IoT Future",
+      detail: "AI meets cybersecurity in IoT networks.",
+      desc: "With billions of devices connected globally, securing the Internet of Things has never been more critical. In 2025, trends focus on enhanced encryption, AI-powered threat detection, and real-time monitoring to prevent breaches and protect sensitive data across smart homes, cities, and industries."
+    }
   ];
+  
   
   
 
