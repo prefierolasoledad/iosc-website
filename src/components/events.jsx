@@ -159,30 +159,31 @@ const Events = () => {
             </div>
           ))}
         </div>
+        <div className="w-full ml-5 mr-5 flex items-center justify-center flex-col overflow-x-auto scrollbar-hide">
+          {/* Event Selector Bar */}
+          <div className="w-[90%] mt-10 md:mt-16 h-1 bg-gray-400 flex items-center justify-around">
+            {events?.map((e, idx) => (
+              <div
+                key={idx}
+                onClick={() => setEvent(e.title)}
+                className={`h-5 md:h-10 transition-all duration-300 ${
+                  event === e.title ? "w-5 md:w-10" : "w-2 md:w-5"
+                } bg-sky-400 rounded-xl cursor-pointer`}
+              />
+            ))}
+          </div>
 
-        {/* Event Selector Bar */}
-        <div className="w-[90%] mt-10 md:mt-16 h-1 bg-gray-400 flex items-center justify-around">
-          {events?.map((e, idx) => (
-            <div
-              key={idx}
-              onClick={() => setEvent(e.title)}
-              className={`h-5 md:h-10 transition-all duration-300 ${
-                event === e.title ? "w-5 md:w-10" : "w-2 md:w-5"
-              } bg-sky-400 rounded-xl cursor-pointer`}
-            />
-          ))}
-        </div>
-
-        {/* Event Titles */}
-        <div className="w-[90%] mt-4 md:mt-6 flex flex-wrap gap-2 md:gap-5 justify-around">
-          {events?.map((e, idx) => (
-            <div
-              key={idx}
-              className="text-white text-[5px] md:text-[14px] text-center max-w-[100px] break-words"
-            >
-              {e.title}
-            </div>
-          ))}
+          {/* Event Titles */}
+          <div className="w-[90%] mt-4 md:mt-6 flex flex-wrap gap-2 md:gap-5 justify-around">
+            {events?.map((e, idx) => (
+              <div
+                key={idx}
+                className="text-white text-[4px] md:text-[14px] text-center max-w-[100px] break-words"
+              >
+                {e.title}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
