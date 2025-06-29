@@ -12,12 +12,14 @@ import {
   RxCross2
 } from "react-icons/rx";
 import { useRouter } from 'next/navigation';
-import { MdOutlineEmojiEvents } from "react-icons/md";
+import { MdOutlineEmojiEvents, MdPersonSearch  } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { RiTeamLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import { FaRegEdit } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
+import { FaChalkboardTeacher } from 'react-icons/fa';
+
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +29,7 @@ function NavBar() {
   const icons = [
     { icon: <RxHome />, path: '/', label: 'Home' },
     { icon: <MdOutlineEmojiEvents />, path: '/events', label: 'Events' },
+    { icon: <FaChalkboardTeacher />, path: '/mentors', label: 'Mentors' },
     { icon: <FaUsers />, path: '/alumini', label: 'Alumni' },
     { icon: <RiTeamLine />, path: '/team', label: 'Team' },
     { icon: <FaTools />, path: '/projects', label: 'Projects' },
@@ -50,9 +53,9 @@ function NavBar() {
 
   // Define getTranslateY to adjust based on window width
   const getTranslateY = () => {
-    if (windowWidth < 640) return -130;  // sm
+    if (windowWidth < 640) return -140;  // sm
     if (windowWidth < 768) return -150;  // md
-    return -180;  // lg and above
+    return -200;  // lg and above
   };
 
   return (
