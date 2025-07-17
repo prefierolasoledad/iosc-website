@@ -56,7 +56,7 @@ const EventRegistrationForm = () => {
             },
             });
 
-            alert(response.data.message || "Form submitted successfully!");
+            setShowSuccessPopup(true);
         } catch (error) {
             console.error("Error submitting form:", error);
             alert("Failed to submit. Please try again.");
@@ -111,6 +111,21 @@ const EventRegistrationForm = () => {
           </button>
         </div>
       </div>
+      {showSuccessPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+            <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
+            <h3 className="text-xl font-bold mb-4">Registration Successful!</h3>
+            <p className="mb-6">Thank you for registering. We’ll contact you soon.</p>
+            <button
+                onClick={() => setShowSuccessPopup(false)}
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+                Close
+            </button>
+            </div>
+        </div>
+        )}
+
     </section>
   );
 };
