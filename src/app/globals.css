@@ -12,3 +12,7 @@
     scrollbar-width: none;     /* Firefox */
   }
   
+/* You can use this with className="input" */
+.input {
+  @apply w-full bg-transparent border border-gray-600 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200;
+}
