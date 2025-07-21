@@ -1,0 +1,81 @@
+.register-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #00ccff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 998;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.register-btn:hover {
+    background-color: #0099cc;
+}
+
+.register-btn-icon {
+    font-size: 16px;
+}
+
+.register-btn-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .register-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+
+    .register-btn-icon {
+        font-size: 14px;
+    }
+
+    .register-btn-text {
+        display: none;
+    }
+
+    .register-btn {
+        min-width: 48px;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        border-radius: 50%;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .register-btn {
+        padding: 11px 20px;
+        font-size: 15px;
+        min-width: 130px;
+    }
+
+    .register-btn-icon {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .register-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        min-width: 140px;
+    }
+
+    .register-btn-icon {
+        font-size: 16px;
+    }
+}
