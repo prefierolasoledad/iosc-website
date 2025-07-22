@@ -1,17 +1,23 @@
+"use client"
 import HEROSECTIONIMAGE from "@/assets/hersosection-image.png"
 import STARS from "@/assets/stars.png";
 import LOGO from "@/assets/logo.png";
 import Image from "next/image";
 import './sprinkleAnimation.css';
-
+import { useRouter } from "next/navigation";
 import { Orbitron } from "next/font/google";
 
 const orbitron = Orbitron({
     weight: '900',
     subsets: ['latin'],
-  })
+})
 
 const HeroSection=()=>{
+    const Router = useRouter();
+    
+    const redirect = () => {
+        Router.push('/eventPage');
+    }
     return(
         <section className="bg-black h-[100vh] w-full overflow-hidden">
             <div className="w-full">
@@ -77,9 +83,9 @@ const HeroSection=()=>{
                 </div>
                 <div className={`absolute top-0 w-full pt-5 pl-5 md:pl-10`}>
                     <div className="w-full md:h-24 h-16">
-                        <Image src={LOGO} height="40px" width="20px" alt="logo" className="md:h-20 ml-[-90px] h-14 object-contain"></Image>
+                        <Image src={LOGO} height="30px" width="15px" alt="logo" className="md:h-20 ml-[-90px] h-14 object-contain"></Image>
                     </div>
-                    <h1 className={`${orbitron.className} text-xl md:text-3xl lg:text-5xl text-outline font-extrabold`}>
+                    <h1 className={`${orbitron.className} text-xl md:text-2xl lg:text-4xl text-outline font-extrabold`}>
                         WE'RE IoSC-EDC<br/>
                         A FUTURE-FOCUSED, TECH-DRIVEN <br className="hidden md:block"/>
                         COMMUNITY
@@ -87,11 +93,16 @@ const HeroSection=()=>{
                     <div className="w-full h-80 md:mt-[-28px]" 
                         style={{
                             backgroundImage: `url(${HEROSECTIONIMAGE.src})`,
-                            backgroundSize:'250px',
+                            backgroundSize:'200px',
                             backgroundPosition:'50% 50%',
                             backgroundRepeat:'no-repeat'
                         }}
                     />
+                    <div className="flex justify-center items-center  w-full">
+                        <button onClick={redirect} className="flex justify-center items-center bg-gradient-to-r from-stone-900 to-slate-950 text-white font-bold py-2 px-6 rounded-full hover:from-stone-950 to-zinc-950 transition">
+                            Register Now
+                        </button>
+                    </div>
                     <div className="w-full text-white mt-0 pl-0 pr-0">
                         <p className=" md:pr-10 pr-0 pl-0 md:pl-0 text-sm lg:text-lg">
                             The <span className="text-white font-bold">IoSC</span>  is a community full of people who love technology oriented towards innovative 
