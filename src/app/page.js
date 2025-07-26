@@ -4,6 +4,7 @@ import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
 import Chatbot from "../components/Chatbot";  // Correct path for Chatbot
+import EventBellNotification from "@/components/EventNotification";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
