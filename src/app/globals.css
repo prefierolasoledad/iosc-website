@@ -16,3 +16,46 @@
 .input {
   @apply w-full bg-transparent border border-gray-600 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200;
 }
+
+/* @layer utilities {
+  @keyframes slideX {
+    0% {
+      transform: translateX(-20vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+
+  .animate-slideX {
+     animation: slideX linear infinite;
+  }
+} */
+
+@keyframes swingInFromTop {
+  0% {
+    transform: translateY(-300px) rotateZ(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(20px) rotateZ(10deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) rotateZ(-8deg);
+  }
+  70% {
+    transform: translateY(5px) rotateZ(5deg);
+  }
+  85% {
+    transform: translateY(-2px) rotateZ(-2deg);
+  }
+  100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+}
+
+.swing-in {
+  animation: swingInFromTop 2s ease-out forwards;
+  transform-origin: top center;
+}

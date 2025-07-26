@@ -68,3 +68,24 @@
   -webkit-text-stroke: 1px #38bdf8; /* white border */
   text-shadow: 0 0 10px rgba(56, 189, 248, 0.7); /* optional glow */
 }
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0px rgba(0, 191, 255, 0.7); }
+  50% { box-shadow: 0 0 20px rgba(0, 191, 255, 1); }
+  100% { box-shadow: 0 0 0px rgba(0, 191, 255, 0.7); }
+}
+
+.animate-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+
+.speed-1 {
+  animation-duration: 12s;
+}
+.speed-2 {
+  animation-duration: 14s;
+}
+.speed-3 {
+  animation-duration: 10s;
+}

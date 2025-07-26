@@ -4,6 +4,8 @@ import LOGO from "@/assets/logo.png";
 import Image from "next/image";
 import './sprinkleAnimation.css';
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Orbitron } from "next/font/google";
 
 const orbitron = Orbitron({
@@ -12,6 +14,16 @@ const orbitron = Orbitron({
   })
 
 const HeroSection=()=>{
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+    const timer = setTimeout(() => {
+        setShowPopup(true);
+    }, 500); // delay before showing popup
+    return () => clearTimeout(timer);
+    }, []);
+
     return(
         <section className="bg-black h-[100vh] w-full overflow-hidden">
             <div className="w-full">
@@ -102,9 +114,57 @@ const HeroSection=()=>{
                             Our mission is to bring <span className="">hands-on education</span> based on collaboration and real-life problem-solving through workshops, 
                             hackathons, coding competitions, and networking sessions. With those, we equip our own with contemporary skills and 
                             industry insight.
-                        </p>                   
+                        </p>            
                     </div>
                 </div>
+                {/* {showPopup && ( */}
+                    {/* <div
+                        className={`fixed top-0 w-full z-50 flex items-center bg-white transition-all duration-700 ease-out ${
+                            showPopup ? 'translate-y-0 opacity-100' : '-translate-y-5 opacity-0'
+                        }`}
+                        >
+                        <div className="flex gap-10 w-full">
+                            {['speed-1', 'speed-1', 'speed-1', 'speed-1', 'speed-1'].map((speedClass, i) => (
+                            <Link href="/eventPage" key={i}>
+                                <p
+                                className={`animate-slideX ${speedClass} whitespace-nowrap text-indigo-500 bg-white px-6 py-3 font-bold text-[12px] md:text-lg rounded-full transition-all duration-1000 ease-in-out hover:scale-105 cursor-pointer`}
+                                >
+                                🎉 Register for Our Upcoming Tech Event!
+                                </p>
+                            </Link>
+                            ))}
+                        </div>
+                    </div> */}
+
+
+
+
+
+                {/* )} */}
+
+                {/* {showPopup && ( */}
+                    {/* // Register Now Popup */}
+                    {/* <div
+                    className={`fixed z-50 top-70
+                        left-1/2 -translate-x-1/2
+                        md:left-auto md:translate-x-0 md:right-30
+                        text-center rounded-xl shadow-2xl px-6 py-4 w-[90%] h-[20%] md:w-[400px] 
+                        md:h-[175px]
+                        bg-gradient-to-r from-blue-500 to-indigo-500 text-white 
+                        flex items-center justify-center transition-all duration-700 ease-out
+                        ${showPopup ? 'swing-in' : 'opacity-0'}
+                    `}
+                    >
+                    <Link href="/eventPage" className="w-full">
+                        <p className="font-semibold text-base md:text-xl hover:underline">
+                        🎉 Register Now for Our Upcoming Tech Event!
+                        </p>
+                    </Link>
+                    </div> */}
+
+
+
+                {/* )} */}
             </div>
             
         </section>

@@ -6,19 +6,19 @@ const orbitron = Orbitron({ weight: '900', subsets: ['latin'] });
 
 const EventRegistrationForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     phone: '',
     college: '',
-    branch: '',
+    yearBranch: '',
     event: '',
     teamName: '',
-    members: '',
+    teamMembers: '',
     github: '',
     linkedin: '',
   });
 
-//   const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false); // ✅ NEW STATE
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateGmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -30,38 +30,33 @@ const EventRegistrationForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-//   const handleFileChange = (e) => {
-//     setSelectedFile(e.target.files[0]);
-//   };
+  const handleSubmit = async () => {
+    const { email, github, linkedin } = formData;
 
-    const handleSubmit = async () => {
-        const { email, github, linkedin } = formData;
+    if (!validateGmail(email)) return alert("Please enter a valid Gmail address.");
+    if (!validateGitHub(github)) return alert("Please enter a valid GitHub profile link.");
+    if (!validateLinkedIn(linkedin)) return alert("Please enter a valid LinkedIn profile link.");
 
-        if (!validateGmail(email)) return alert("Please enter a valid Gmail address.");
-        if (!validateGitHub(github)) return alert("Please enter a valid GitHub profile link.");
-        if (!validateLinkedIn(linkedin)) return alert("Please enter a valid LinkedIn profile link.");
-        // if (!selectedFile) return alert("Please upload your Resume / College ID.");
+    setLoading(true);
 
-        const formPayload = new FormData();
-        for (const key in formData) {
-            formPayload.append(key, formData[key]);
-        }
-        // formPayload.append('resume', selectedFile);
+    // ✅ Show your popup immediately (don’t create a new one)
+    setShowSuccessPopup(true);
 
-        try {
-            //https://my-backend-u5jv.onrender.com
-            const response = await axios.post('https://my-backend-u5jv.onrender.com/register', formPayload, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            });
+    const formPayload = new FormData();
+    for (const key in formData) {
+        formPayload.append(key, formData[key]);
+    }
 
-            setShowSuccessPopup(true);
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Failed to submit. Please try again.");
-        }
-    };
+    try {
+        await axios.post('https://my-backend-u5jv.onrender.com/register', formPayload, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("❌ Something went wrong! Please try again."); 
+    }
+  };
+
 
   return (
     <section className="bg-black text-white py-12 px-4 md:px-20">
@@ -72,11 +67,11 @@ const EventRegistrationForm = () => {
 
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
+            <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
             <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email" className="input" required />
             <input name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Phone Number" className="input" required />
             <input name="college" value={formData.college} onChange={handleChange} type="text" placeholder="College / University" className="input" required />
-            <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Year & Branch" className="input" required />
+            <input name="yearBranch" value={formData.yearBranch} onChange={handleChange} type="text" placeholder="Year & Branch" className="input" required />
             <select name="event" value={formData.event} onChange={handleChange} className="input bg-black border-white" required>
               <option value="" className='text-black'>Select Event</option>
               <option value="hackathon" className='text-black'>Hackathon</option>
@@ -86,46 +81,38 @@ const EventRegistrationForm = () => {
           </div>
 
           <input name="teamName" value={formData.teamName} onChange={handleChange} type="text" placeholder="Team Name" className="input" required />
-          <textarea name="members" value={formData.members} onChange={handleChange} placeholder="Team Members' Names" className="input h-24" required />
+          <textarea name="teamMembers" value={formData.teamMembers} onChange={handleChange} placeholder="Team Member's Names" className="input h-24" required />
 
           <div className="grid md:grid-cols-2 gap-6">
             <input name="github" value={formData.github} onChange={handleChange} type="url" placeholder="GitHub Profile Link" className="input" required />
             <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="url" placeholder="LinkedIn Profile Link" className="input" required />
           </div>
 
-          {/* <div className="mt-4">
-            <label className="block mb-2 font-semibold">Upload Resume / College ID</label>
-            <input
-              type="file"
-              onChange={handleFileChange}
-              className="text-white file:bg-blue-600 file:border-none file:py-2 file:px-4 file:rounded-lg file:text-white file:cursor-pointer"
-              required
-            />
-          </div> */}
-
           <button
             onClick={handleSubmit}
-            className="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300"
+            disabled={loading} // ✅ Disable button while submitting
+            className={`mt-8 w-full font-bold py-3 rounded-xl transition duration-300 
+            ${loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
           >
-            Submit Registration
+            {loading ? "Submitted" : "Submit Registration"} {/* ✅ Change text while loading */}
           </button>
         </div>
       </div>
+
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-            <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
-            <h3 className="text-xl font-bold mb-4">Registration Successful!</h3>
+          <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
+            <h3 className="text-xl font-bold mb-4">✅ Registration Successful!</h3>
             <p className="mb-6">Thank you for registering. We’ll contact you soon.</p>
             <button
-                onClick={() => setShowSuccessPopup(false)}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              onClick={() => setShowSuccessPopup(false)}
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
-                Close
+              Close
             </button>
-            </div>
+          </div>
         </div>
-        )}
-
+      )}
     </section>
   );
 };
