@@ -36,15 +36,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 ```
 iosc-website/
-├── backend/
-│   ├── processed_data/
-│   │   ├── documents.json
-│   │   ├── tfidf_matrix.pkl
-│   │   └── vectorizer.pkl
-│   ├── .env
-│   ├── bot.py
-│   ├── data_processor.py
-│   └── requirements.txt
 ├── public/
 │   ├── file.svg
 │   ├── globe.svg
