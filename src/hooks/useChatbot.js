@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://iosctestbackend-production.up.railway.app/';
+const API_BASE_URL = 'https://iosctestbackend-production.up.railway.app/';
 
 // Create axios instance with default config
 const api = axios.create({
