@@ -49,9 +49,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        {isClient && (
-          <EventNotification event={event} position="bottom-center" />
-        )}
+        {isClient && <EventNotification 
+        // event={event} 
+        position="bottom-center" />}
       </body>
     </html>
   );
