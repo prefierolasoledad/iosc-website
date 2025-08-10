@@ -1,12 +1,17 @@
-
 'use client';
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { useState, useEffect } from "react";
-import EventNotification from "@/components/EventNotification";
+import dynamic from "next/dynamic";
 
 import EVENTPHOTO from "@/assets/events/azientek.jpg";
+
+// Dynamically import EventNotification to avoid hydration issues
+const EventNotification = dynamic(() => import("@/components/EventNotification"), {
+  ssr: false,
+  loading: () => null
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
