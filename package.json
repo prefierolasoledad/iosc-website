@@ -12,7 +12,12 @@
     "@next/font": "^14.2.15",
     "axios": "^1.10.0",
     "canvas-confetti": "^1.9.3",
+    "dotenv": "^17.2.1",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
+    "express": "^5.1.0",
     "next": "15.3.0",
+    "nodemailer": "^7.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
