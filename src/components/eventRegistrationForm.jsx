@@ -63,7 +63,7 @@ const EventRegistrationForm = () => {
             <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
             <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Email" className="input" required />
             <input name="phone" value={formData.phone} onChange={handleChange} type="text" placeholder="Phone Number" className="input" required />
-            <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Year" className="input" required />
+            <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Graduation Year" className="input" required />
             <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Branch" className="input" required />
             <select name="college" value={formData.college} onChange={handleChange} className="input bg-black border-white" required>
               <option value="" className='text-black'>Select School</option>
