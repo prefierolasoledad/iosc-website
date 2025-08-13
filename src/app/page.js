@@ -11,6 +11,11 @@ const Chatbot = dynamic(() => import("../components/Chatbot"), {
   loading: () => null
 });
 
+const EventNotification = dynamic(() => import("@/components/EventNotification"), {
+  ssr: false,
+  loading: () => null
+});
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [isClient, setIsClient] = useState(false);
@@ -32,17 +37,32 @@ export default function Home() {
       setLoading(false);
     }
   }, []);
+  
 
   // Don't render anything until client-side hydration is complete
   if (!isClient) {
     return null;
   }
+   const event = {
+    id: "===",
+    title: "Event Registration",
+    description:
+      "Speaker session as well as club orientation",
+    date: "Aug 28, 2025 • Offline",
+    ctaUrl: "/eventRegistration",
+    // image: EVENTPHOTO,
+    neverShowAgainDays: 30,
+  };
 
   return (
     <>
       {loading && <LoadingScreen />}
       {!loading && (
         <>
+          {isClient && <EventNotification 
+            event={event} 
+            position="bottom-center" />
+          }
           <NavBar />
           <HeroSection />
           <Chatbot />

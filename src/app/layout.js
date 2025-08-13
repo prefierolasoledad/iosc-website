@@ -30,16 +30,6 @@ export default function RootLayout({ children }) {
     setIsClient(true);
   }, []);
 
-  const event = {
-    id: "iosc-edc-gitTogether",
-    title: "IoSC‑EDC GitTogether 2025",
-    description:
-      "Week long, hands on open source collaboration competition!",
-    date: "Aug 23–24, 2025 • Online",
-    ctaUrl: "/eventPage",
-    image: EVENTPHOTO,
-    neverShowAgainDays: 30,
-  };
 
   return (
     <html lang="en">
@@ -49,9 +39,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        {isClient && <EventNotification 
-        // event={event} 
-        position="bottom-center" />}
       </body>
     </html>
   );

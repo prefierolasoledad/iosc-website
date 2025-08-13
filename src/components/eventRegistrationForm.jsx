@@ -10,10 +10,8 @@ const EventRegistrationForm = () => {
     email: '',
     phone: '',
     college: '',
-    yearBranch: '',
-    event: '',
-    teamName: '',
-    teamMembers: '',
+    year: '',
+    branch:'',
     github: '',
     linkedin: '',
   });
@@ -22,8 +20,6 @@ const EventRegistrationForm = () => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateGmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validateGitHub = (url) => /^https:\/\/(www\.)?github\.com\/[A-Za-z0-9_-]+\/?$/.test(url);
-  const validateLinkedIn = (url) => /^https:\/\/(www\.)?linkedin\.com\/in\/[A-Za-z0-9_-]+\/?$/.test(url);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +27,9 @@ const EventRegistrationForm = () => {
   };
 
   const handleSubmit = async () => {
-    const { email, github, linkedin } = formData;
+    const { email} = formData;
 
     if (!validateGmail(email)) return alert("Please enter a valid Gmail address.");
-    if (!validateGitHub(github)) return alert("Please enter a valid GitHub profile link.");
-    if (!validateLinkedIn(linkedin)) return alert("Please enter a valid LinkedIn profile link.");
-
     setLoading(true);
 
     // ✅ Show your popup immediately (don’t create a new one)
@@ -59,7 +52,7 @@ const EventRegistrationForm = () => {
 
 
   return (
-    <section className="bg-black text-white py-12 px-4 md:px-20">
+    <section className="bg-black text-white py-12 px-4  md:h-[100vh] w-[100vw] items-center md:px-20">
       <div className="max-w-4xl mx-auto bg-[#0c0c0c] p-6 md:p-10 rounded-2xl shadow-lg border border-gray-700">
         <h2 className={`${orbitron.className} text-3xl md:text-4xl text-sky-400 mb-8 text-center`}>
           Event Registration
@@ -68,24 +61,22 @@ const EventRegistrationForm = () => {
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
-            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email" className="input" required />
-            <input name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Phone Number" className="input" required />
-            <input name="college" value={formData.college} onChange={handleChange} type="text" placeholder="College / University" className="input" required />
-            <input name="yearBranch" value={formData.yearBranch} onChange={handleChange} type="text" placeholder="Year & Branch" className="input" required />
-            <select name="event" value={formData.event} onChange={handleChange} className="input bg-black border-white" required>
-              <option value="" className='text-black'>Select Event</option>
-              <option value="hackathon" className='text-black'>Hackathon</option>
-              <option value="workshop" className='text-black'>Workshop</option>
-              <option value="ideathon" className='text-black'>Ideathon</option>
+            <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Email" className="input" required />
+            <input name="phone" value={formData.phone} onChange={handleChange} type="text" placeholder="Phone Number" className="input" required />
+            <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Year" className="input" required />
+            <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Branch" className="input" required />
+            <select name="college" value={formData.college} onChange={handleChange} className="input bg-black border-white" required>
+              <option value="" className='text-black'>Select College</option>
+              <option value="USAR" className='text-black'>USAR</option>
+              <option value="USAP" className='text-black'>USAP</option>
+              <option value="USDI" className='text-black'>USDI</option>
+              <option value="USMC" className='text-black'>USMC</option>
             </select>
           </div>
 
-          <input name="teamName" value={formData.teamName} onChange={handleChange} type="text" placeholder="Team Name" className="input" required />
-          <textarea name="teamMembers" value={formData.teamMembers} onChange={handleChange} placeholder="Team Member's Names" className="input h-24" required />
-
           <div className="grid md:grid-cols-2 gap-6">
-            <input name="github" value={formData.github} onChange={handleChange} type="url" placeholder="GitHub Profile Link" className="input" required />
-            <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="url" placeholder="LinkedIn Profile Link" className="input" required />
+            <input name="github" value={formData.github} onChange={handleChange} type="url" placeholder="GitHub Profile Link (optional)" className="input" />
+            <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="url" placeholder="LinkedIn Profile Link (optional)" className="input" />
           </div>
 
           <button
