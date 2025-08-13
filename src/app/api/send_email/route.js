@@ -25,7 +25,7 @@ Details:
 Date: 28 Aug 2025
 Time: 3:00 PM
 Venue: Lecture Hall
-WhatsApp: https://chat.whatsapp.com/example
+WhatsApp: https://chat.whatsapp.com/iosc
 
 ${github ? `GitHub: ${github}` : ""}
 ${linkedin ? `LinkedIn: ${linkedin}` : ""}`,
