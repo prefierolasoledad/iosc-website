@@ -66,7 +66,7 @@ const EventRegistrationForm = () => {
             <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Year" className="input" required />
             <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Branch" className="input" required />
             <select name="college" value={formData.college} onChange={handleChange} className="input bg-black border-white" required>
-              <option value="" className='text-black'>Select College</option>
+              <option value="" className='text-black'>Select School</option>
               <option value="USAR" className='text-black'>USAR</option>
               <option value="USAP" className='text-black'>USAP</option>
               <option value="USDI" className='text-black'>USDI</option>
