@@ -94,7 +94,7 @@ const EventRegistrationForm = () => {
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
             <h3 className="text-xl font-bold mb-4">✅ Registration Successful!</h3>
-            <p className="mb-6">Thank you for registering. We’ll contact you soon.</p>
+            <p className="mb-6">Thank you for registering. Please check your mail.</p>
             <button
               onClick={() => setShowSuccessPopup(false)}
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
