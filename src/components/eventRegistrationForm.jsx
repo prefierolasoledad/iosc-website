@@ -64,7 +64,7 @@ const EventRegistrationForm = () => {
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
-            <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Email" className="input" required />
+            <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Gmail" className="input" required />
             <input name="phone" value={formData.phone} onChange={handleChange} type="text" placeholder="Phone Number" className="input" required />
             <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Graduation Year" className="input" required />
             <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Branch" className="input" required />
