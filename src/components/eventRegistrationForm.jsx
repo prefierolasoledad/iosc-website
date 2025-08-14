@@ -26,9 +26,12 @@ const EventRegistrationForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const requiredFields = ["fullName", "email", "phone", "college", "year", "branch"];
+  const isFormValid = requiredFields.every((field) => formData[field].trim() !== "");
+
   const handleSubmit = async () => {
     const { email} = formData;
-
+    if (!isFormValid) return alert("Please fill all required fields.");
     if (!validateGmail(email)) return alert("Please enter a valid Gmail address.");
     setLoading(true);
 
