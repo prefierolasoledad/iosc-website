@@ -45,7 +45,7 @@ export default function Home() {
   }
    const event = {
     id: "===",
-    title: "DECK-UP",
+    title: "DOCK-UP",
     description:
       "Speaker session as well as club orientation",
     date: "Aug 28, 2025 • Offline",
