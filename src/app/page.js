@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
-
+import EVENTPHOTO from "@/assets/events/deck-up.jpg";
 // Dynamically import Chatbot to prevent hydration issues
 const Chatbot = dynamic(() => import("../components/Chatbot"), {
   ssr: false,
@@ -45,12 +45,12 @@ export default function Home() {
   }
    const event = {
     id: "===",
-    title: "Event Registration",
+    title: "DECK-UP",
     description:
       "Speaker session as well as club orientation",
     date: "Aug 28, 2025 • Offline",
     ctaUrl: "/eventRegistration",
-    // image: EVENTPHOTO,
+    image: EVENTPHOTO,
     neverShowAgainDays: 30,
   };
 
