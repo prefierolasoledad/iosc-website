@@ -48,7 +48,7 @@ export default function Home() {
     title: "DOCK-UP",
     description:
       "Speaker session as well as club orientation",
-    date: "Aug 28, 2025 • Offline",
+    date: "Aug 29, 2025 • Offline",
     ctaUrl: "/eventRegistration",
     image: EVENTPHOTO,
     neverShowAgainDays: 30,
