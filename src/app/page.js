@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
-import EVENTPHOTO from "@/assets/events/deck-up.jpg";
+import EVENTPHOTO from "@/assets/events/dock-up.jpg";
 // Dynamically import Chatbot to prevent hydration issues
 const Chatbot = dynamic(() => import("../components/Chatbot"), {
   ssr: false,
