@@ -60,7 +60,7 @@ export default function Home() {
       {!loading && (
         <>
           {isClient && <EventNotification 
-            event={event} 
+            // event={event} 
             position="bottom-center" />
           }
           <NavBar />
