@@ -9,7 +9,7 @@ import AVINASHSRIVASTAVA from '@/assets/alumini/Avinash Srivastava.jpg';
 import DIVYANSH from '@/assets/alumini/Divyansh.jpg';
 import SIDDHARTHGUPTA from '@/assets/alumini/Siddharth Gupta.jpg';
 
-const Alumini = () => {
+const Alumni = () => {
   const [event, setEvent] = useState("2023-2024");
   const [flippedIndex, setFlippedIndex] = useState(null);
 
@@ -68,7 +68,7 @@ const Alumini = () => {
             style={{ backgroundImage: `url(${STARS.src})` }}
           />
           <h2 className="text-center font-extrabold text-6xl text-sky-400 mb-10 relative z-10">
-            ALUMINI
+            ALUMNI
           </h2>
         </div>
       </div>
@@ -126,4 +126,4 @@ const Alumini = () => {
   );
 };
 
-export default Alumini;
+export default Alumni;
