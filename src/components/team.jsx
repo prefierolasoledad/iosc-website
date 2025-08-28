@@ -304,7 +304,7 @@ const Teams = () => {
               },
               {
                 "Name":"PIYUSH GUPTA",
-                "Position":"Co-Lead",
+                "Position":"Core Member",
                 image:PIYUSHGUPTA,
                 github:'https://github.com/Piyush-xo-19',
             },
