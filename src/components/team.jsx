@@ -325,12 +325,12 @@ const Teams = () => {
                 image:ALISHAGODARA
               },
             
-              {
-                  "Name":"KRITI RASTOGI",
-                  "Position":"Core Member",
-                  image:KRITIRASTOGI,
-                  github:'https://github.com/kritirastogi1501'
-              },
+              // {
+              //     "Name":"KRITI RASTOGI",
+              //     "Position":"Core Member",
+              //     image:KRITIRASTOGI,
+              //     github:'https://github.com/kritirastogi1501'
+              // },
               
               {
               "Name":"SANCHIT NARANG",
