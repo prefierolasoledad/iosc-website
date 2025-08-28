@@ -98,7 +98,7 @@ const EventRegistrationForm = () => {
           <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
             <h3 className="text-xl font-bold mb-4">
               {/* ✅  */}
-              🛑 
+              ❌ 
               Registration Closed!</h3>
             <p className="mb-6">Please reach out the core team.</p>
             <button
