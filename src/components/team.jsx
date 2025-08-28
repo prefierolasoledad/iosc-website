@@ -467,7 +467,7 @@ const Teams = () => {
             <div className="flex flex-col gap-10 items-center mt-10 w-full">
                 {events?.map((event, index) => {
                     // Check if slider is needed (teams with more than 3 members)
-                    const needsSlider = event.Members.length > 3;
+                    const needsSlider = event.Members.length > 1;
                     const sliderRef = useRef(null);
                     const [canScrollLeft, setCanScrollLeft] = React.useState(false);
                     const [canScrollRight, setCanScrollRight] = React.useState(needsSlider);
