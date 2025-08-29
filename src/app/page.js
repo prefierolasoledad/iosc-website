@@ -45,12 +45,12 @@ export default function Home() {
   }
    const event = {
     id: "===",
-    title: "DOCK-UP",
+    title: "MENTORSHIP REGISTRATIONS",
     description:
-      "Speaker session as well as club orientation",
-    date: "Aug 29, 2025 • Offline",
-    ctaUrl: "/eventRegistration",
-    image: EVENTPHOTO,
+      "Mentorship program organised by IOSC EDC Club",
+    date: "Sept 08, 2025 • Offline",
+    ctaUrl: "/mentorshipRegistrations",
+    // image: EVENTPHOTO,
     neverShowAgainDays: 30,
   };
 
@@ -60,7 +60,7 @@ export default function Home() {
       {!loading && (
         <>
           {isClient && <EventNotification 
-            // event={event} 
+            event={event} 
             position="bottom-center" />
           }
           <NavBar />
