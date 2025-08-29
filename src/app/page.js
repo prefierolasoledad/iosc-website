@@ -45,7 +45,7 @@ export default function Home() {
   }
    const event = {
     id: "===",
-    title: "MENTORSHIP REGISTRATIONS",
+    title: "MENTORSHIP PROGRAM",
     description:
       "Mentorship program organised by IOSC EDC Club",
     date: "Sept 08, 2025 • Offline",
