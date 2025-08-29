@@ -179,13 +179,13 @@ const Teams = () => {
       },
       {
         Name: "ARYAN SACHAN",
-        Position: "Technical Lead",
+        Position: "Tech Lead",
         image: ARYANSACHAN,
         quote: "Don't watch the clock; do what it does. Keep going.",
       },
       {
         Name: "KARAN BHATT",
-        Position: "Technical Co-Lead",
+        Position: "Tech Co-Lead",
         image: KARANBHATT,
         quote: "Success is the sum of small efforts, repeated day in and day out.",
       },
