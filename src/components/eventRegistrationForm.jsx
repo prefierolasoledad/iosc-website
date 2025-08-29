@@ -77,7 +77,7 @@ const EventRegistrationForm = () => {
               <option value="USMC" className='text-black'>USMC</option>
             </select>
             <select name="team" value={formData.team} onChange={handleChange} className="input bg-black border-white" required>
-              <option value="" className='text-black'>Select School</option>
+              <option value="" className='text-black'>Select Team </option>
               <option value="Team I3" className='text-black'>Team I3</option>
               <option value="Team I5" className='text-black'>Team I5</option>
               <option value="Team I7" className='text-black'>Team I7</option>
