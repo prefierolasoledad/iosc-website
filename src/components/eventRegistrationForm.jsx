@@ -10,8 +10,9 @@ const EventRegistrationForm = () => {
     email: '',
     phone: '',
     college: '',
-    year: '',
     branch:'',
+    year: '',
+    team:'',
     github: '',
     linkedin: '',
   });
@@ -43,14 +44,14 @@ const EventRegistrationForm = () => {
         formPayload.append(key, formData[key]);
     }
 
-    // try {
-    //     await axios.post('https://my-backend-u5jv.onrender.com/register', formPayload, {
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
-    // } catch (error) {
-    //     console.error("Error submitting form:", error);
-    //     alert("❌ Something went wrong! Please try again."); 
-    // }
+    try {
+        await axios.post('https://my-backend-u5jv.onrender.com/register', formPayload, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("❌ Something went wrong! Please try again."); 
+    }
   };
 
 
@@ -58,7 +59,7 @@ const EventRegistrationForm = () => {
     <section className="bg-black text-white py-12 px-4  md:h-[100vh] w-[100vw] items-center md:px-20">
       <div className="max-w-4xl mx-auto bg-[#0c0c0c] p-6 md:p-10 rounded-2xl shadow-lg border border-gray-700">
         <h2 className={`${orbitron.className} text-3xl md:text-4xl text-sky-400 mb-8 text-center`}>
-          Event Registration
+          Mentorship Registration
         </h2>
 
         <div className="space-y-6">
@@ -74,6 +75,14 @@ const EventRegistrationForm = () => {
               <option value="USAP" className='text-black'>USAP</option>
               <option value="USDI" className='text-black'>USDI</option>
               <option value="USMC" className='text-black'>USMC</option>
+            </select>
+            <select name="team" value={formData.team} onChange={handleChange} className="input bg-black border-white" required>
+              <option value="" className='text-black'>Select School</option>
+              <option value="Team I3" className='text-black'>Team I3</option>
+              <option value="Team I5" className='text-black'>Team I5</option>
+              <option value="Team I7" className='text-black'>Team I7</option>
+              <option value="Team I9" className='text-black'>Team I9</option>
+              <option value="Team ARC" className='text-black'>Team ARC</option>
             </select>
           </div>
 
@@ -97,10 +106,8 @@ const EventRegistrationForm = () => {
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
             <h3 className="text-xl font-bold mb-4">
-              {/* ✅  */}
-              ❌ 
-              Registration Closed!</h3>
-            <p className="mb-6">Please reach out the core team.</p>
+              ✅ Registration Complete!</h3>
+            <p className="mb-6">We'll reach out via email with the next steps.</p>
             <button
               onClick={() => setShowSuccessPopup(false)}
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
