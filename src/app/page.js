@@ -5,11 +5,6 @@ import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
 import EVENTPHOTO from "@/assets/events/dock-up.jpg";
-// Dynamically import Chatbot to prevent hydration issues
-const Chatbot = dynamic(() => import("../components/Chatbot"), {
-  ssr: false,
-  loading: () => null
-});
 
 const EventNotification = dynamic(() => import("@/components/EventNotification"), {
   ssr: false,
@@ -31,23 +26,23 @@ export default function Home() {
       if (typeof window !== 'undefined') {
         sessionStorage.setItem("hasVisited", "true");
       }
-      const timer = setTimeout(() => setLoading(false), 8000);
+      const timer = setTimeout(() => setLoading(false), 4000);
       return () => clearTimeout(timer);
     } else {
       setLoading(false);
     }
   }, []);
-  
+
 
   // Don't render anything until client-side hydration is complete
   if (!isClient) {
     return null;
   }
-   const event = {
+
+  const event = {
     id: "===",
     title: "MENTORSHIP PROGRAM",
-    description:
-      "Mentorship program organised by IOSC EDC Club",
+    description: "Mentorship program organised by IOSC EDC Club",
     date: "Sept 08, 2025 • Offline",
     ctaUrl: "/mentorshipRegistrations",
     // image: EVENTPHOTO,
@@ -59,13 +54,14 @@ export default function Home() {
       {loading && <LoadingScreen />}
       {!loading && (
         <>
-          {isClient && <EventNotification 
-            event={event} 
-            position="bottom-center" />
-          }
+          {isClient && (
+            <EventNotification
+              event={event}
+              position="bottom-center"
+            />
+          )}
           <NavBar />
           <HeroSection />
-          <Chatbot />
         </>
       )}
     </>

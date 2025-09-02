@@ -3,7 +3,6 @@ import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const API_BASE_URL = 'https://web-production-921a.up.railway.app/';
-
 // Create axios instance with default config
 const api = axios.create({
   baseURL: API_BASE_URL,

@@ -11,6 +11,8 @@
   "dependencies": {
     "@next/font": "^14.2.15",
     "axios": "^1.10.0",
+    "canvas-confetti": "^1.9.3",
+    "liquid-glass-react": "^1.1.1",
     "next": "15.3.0",
     "nodemailer": "^7.0.5",
     "react": "^19.0.0",
