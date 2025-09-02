@@ -1,83 +1,183 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import LOGO from '@/assets/logo.png';
+import React, { useState, useEffect } from 'react';
 
 const LoadingScreen = () => {
-  const texts = [
-    "BUILDING DREAMS",
-    "TOGETHER",
-    "WELCOME TO",
-    "IoSC-EDC"
-  ];
+  const [displayedText, setDisplayedText] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+  const [progress, setProgress] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // const [isLogoVisible, setIsLogoVisible] = useState(false);
+  const fullText = "WELCOME TO IOSC-EDC";
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % texts.length);
-    }, 2000);
+    let i = 0;
+    const typeWriter = () => {
+      if (i < fullText.length) {
+        setDisplayedText(fullText.slice(0, i + 1));
+        i++;
+        // Faster typing speed between 40-70ms
+        setTimeout(typeWriter, Math.random() * 30 + 40);
+      } else {
+        // Hide cursor quickly after typing completes
+        setTimeout(() => setShowCursor(false), 300);
+        // Start progress bar immediately
+        startProgress();
+      }
+    };
 
-    // if (currentIndex === texts.length - 1) {
-    //   setTimeout(() => setIsLogoVisible(true), 2000);
-    // }
+    // Start typewriter effect after 0.5 seconds
+    setTimeout(typeWriter, 500);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  const startProgress = () => {
+    let currentProgress = 0;
+    const updateProgress = () => {
+      if (currentProgress <= 100) {
+        setProgress(currentProgress);
+        currentProgress += 3; // Faster progress increment
+        setTimeout(updateProgress, 25); // Faster progress updates
+      }
+    };
+    updateProgress();
+  };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center z-50 overflow-hidden">
-      {/* Oval Pulses */}
-      <div className="absolute w-full h-full flex items-center justify-center z-0">
-        {/* Add more ovals with shorter interval delays for seamless loop */}
-        <span className="oval animate-pulse-oval delay-0" />
-        <span className="oval animate-pulse-oval delay-1000" />
-        <span className="oval animate-pulse-oval delay-2000" />
-        <span className="oval animate-pulse-oval delay-3000" />
-        <span className="oval animate-pulse-oval delay-4000" />
+    <div className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center overflow-hidden">
+      {/* Hexagonal Grid Background */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10">
+        <div 
+          className="w-full h-full animate-pulse"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 50% 50%, #00ffff 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+            animation: 'gridPulse 4s ease-in-out infinite'
+          }}
+        />
+      </div>
+      
+      {/* Scanning Lines */}
+      <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-80 animate-scan-1" />
+      <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-80 animate-scan-2 top-1/3" />
+      <div className="absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-80 animate-scan-3 top-2/3" />
+      
+      {/* HUD Frame */}
+      <div className="absolute top-2.5 left-2.5 right-2.5 bottom-2.5 border-2 border-cyan-400 rounded-lg opacity-30 pointer-events-none">
+        <div className="absolute -top-0.5 -left-0.5 w-8 h-8 border-2 border-cyan-400 border-r-0 border-b-0" />
+        <div className="absolute -top-0.5 -right-0.5 w-8 h-8 border-2 border-cyan-400 border-l-0 border-b-0" />
+        <div className="absolute -bottom-0.5 -left-0.5 w-8 h-8 border-2 border-cyan-400 border-r-0 border-t-0" />
+        <div className="absolute -bottom-0.5 -right-0.5 w-8 h-8 border-2 border-cyan-400 border-l-0 border-t-0" />
+      </div>
+      
+      {/* Corner System Status */}
+      <div className="absolute top-5 left-5 text-cyan-400 text-sm font-mono z-20">
+        <div className="mb-0.5">SYS STATUS: ONLINE</div>
+        <div className="w-16 h-1 bg-gray-800 border border-cyan-400 mb-0.5 overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 w-3/4 animate-pulse" />
+        </div>
+        <div>NET: CONNECTED</div>
+      </div>
+      
+      <div className="absolute top-5 right-5 text-cyan-400 text-sm font-mono text-right z-20">
+        <div>CPU: 67%</div>
+        <div>MEM: 42%</div>
+        <div className="w-16 h-1 bg-gray-800 border border-cyan-400 ml-auto mt-0.5 overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 w-2/3 animate-pulse" />
+        </div>
+      </div>
+      
+      <div className="absolute bottom-5 left-5 text-cyan-400 text-sm font-mono z-20">
+        <div>PWR: OPTIMAL</div>
+        <div>TEMP: NORMAL</div>
+      </div>
+      
+      <div className="absolute bottom-5 right-5 text-cyan-400 text-sm font-mono text-right z-20">
+        <div>V2.1.4</div>
+        <div>BUILD: 2025</div>
+      </div>
+      
+      {/* Main Loading Content */}
+      <div className="text-center z-10 relative">
+        <div 
+          className="text-6xl md:text-7xl font-black text-white border-2 border-cyan-400 px-10 py-5 rounded-lg bg-black bg-opacity-80 mb-10 font-mono whitespace-nowrap"
+          style={{
+            textShadow: '0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 2px 2px 0px #000000',
+            boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)'
+          }}
+        >
+          {displayedText}
+          {showCursor && (
+            <span className="inline-block w-1 h-16 bg-cyan-400 ml-1 animate-blink" />
+          )}
+        </div>
+        
+        <div className="w-96 md:w-[500px]">
+          <div className="text-cyan-400 text-base text-left mb-1 font-mono">
+            INITIALIZING SYSTEM...
+          </div>
+          <div 
+            className="w-full h-5 bg-gray-800 border-2 border-cyan-400 rounded-lg overflow-hidden"
+            style={{
+              boxShadow: 'inset 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.1)'
+            }}
+          >
+            <div 
+              className="h-full bg-gradient-to-r from-teal-800 via-cyan-400 to-blue-500 rounded-md transition-all duration-100 ease-out"
+              style={{
+                width: `${progress}%`,
+                backgroundSize: '200% 100%',
+                animation: 'shimmer 1.5s ease-in-out infinite',
+                boxShadow: '0 0 15px rgba(0, 255, 255, 0.8)'
+              }}
+            />
+          </div>
+          <div className="text-cyan-400 text-sm text-right mt-1 font-mono">
+            {progress}%
+          </div>
+        </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-col text-center items-center z-10">
-        {/* {!isLogoVisible ? ( */}
-          <h1 className="text-7xl text-sky-400 font-extrabold animate-pulse transition-all duration-1000">
-            {texts[currentIndex]}
-          </h1>
-        {/* ) : ( */}
-          {/* <img src={LOGO.src} alt="Logo" className="mt-6 w-80 h-72" /> */}
-        {/* )} */}
-      </div>
-
-      {/* Styles */}
       <style jsx>{`
-        .oval {
-          position: absolute;
-          width: 200px;
-          height: 100px;
-          border: 0.1px solid rgba(255, 255, 255, 0.7);
-          border-radius: 50%;
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        
+        .font-mono {
+          font-family: 'Orbitron', monospace;
         }
 
-        @keyframes pulse-oval {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(10);
-            opacity: 0;
-          }
+        @keyframes gridPulse {
+          0%, 100% { opacity: 0.1; }
+          50% { opacity: 0.2; }
         }
 
-        .animate-pulse-oval {
-          animation: pulse-oval 5s linear infinite;
+        @keyframes scan-move {
+          0% { transform: translateX(-100%); opacity: 0; }
+          10% { opacity: 0.8; }
+          90% { opacity: 0.8; }
+          100% { transform: translateX(100vw); opacity: 0; }
         }
 
-        .delay-0 { animation-delay: 0s; }
-        .delay-1000 { animation-delay: 1s; }
-        .delay-2000 { animation-delay: 2s; }
-        .delay-3000 { animation-delay: 3s; }
-        .delay-4000 { animation-delay: 4s; }
+        .animate-scan-1 {
+          animation: scan-move 2s linear infinite;
+        }
+
+        .animate-scan-2 {
+          animation: scan-move 2s linear infinite 0.5s;
+        }
+
+        .animate-scan-3 {
+          animation: scan-move 2s linear infinite 1s;
+        }
+
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
       `}</style>
     </div>
   );
