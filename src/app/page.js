@@ -48,7 +48,7 @@ export default function Home() {
     title: "MENTORSHIP PROGRAM",
     description:
       "Mentorship program organised by IOSC EDC Club",
-    date: "Sept 08, 2025 • Offline",
+    date: "Sept 10, 2025 • Offline",
     ctaUrl: "/mentorshipRegistrations",
     // image: EVENTPHOTO,
     neverShowAgainDays: 30,
