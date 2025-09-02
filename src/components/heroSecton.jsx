@@ -148,7 +148,7 @@ const HeroSection = () => {
 
 
                     {/* Content text with premium styling */}
-                    <div className="max-w-5xl mx-auto space-y-6 md:space-y-8">
+                    <div className="max-w-5xl mx-auto space-y-6 md:space-y-8 mb-10">
                         <div className="relative p-6 md:p-8 rounded-2xl backdrop-blur-md bg-gradient-to-r from-white/5 to-white/10 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in-up animation-delay-700">
                             <p className="text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed md:leading-loose text-gray-100">
                                 The <span className="font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">IoSC</span> is a community full of people who love technology oriented towards innovative

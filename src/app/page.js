@@ -65,7 +65,7 @@ export default function Home() {
           }
           <NavBar />
           <HeroSection />
-          <Chatbot />
+          {/* <Chatbot /> */}
         </>
       )}
     </>
