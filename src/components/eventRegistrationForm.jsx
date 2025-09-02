@@ -1,7 +1,8 @@
 'use client';
-import axios from 'axios';
 import { useState } from 'react';
 import { Orbitron } from "next/font/google";
+import axios from 'axios';
+
 const orbitron = Orbitron({ weight: '900', subsets: ['latin'] });
 
 const EventRegistrationForm = () => {
@@ -11,13 +12,14 @@ const EventRegistrationForm = () => {
     phone: '',
     college: '',
     branch:'',
+    team: '',
     year: '',
     team:'',
     github: '',
     linkedin: '',
   });
 
-  const [loading, setLoading] = useState(false); // ✅ NEW STATE
+  const [loading, setLoading] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateGmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -27,36 +29,51 @@ const EventRegistrationForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const requiredFields = ["fullName", "email", "phone", "college", "year", "branch"];
-  const isFormValid = requiredFields.every((field) => formData[field].trim() !== "");
+const handleSubmit = async () => {
+  const { email } = formData;
 
-  const handleSubmit = async () => {
-    const { email} = formData;
-    if (!isFormValid) return alert("Please fill all required fields.");
-    if (!validateGmail(email)) return alert("Please enter a valid Gmail address.");
-    setLoading(true);
+  if (!validateGmail(email)) {
+    return alert("Please enter a valid Gmail address.");
+  }
 
-    // ✅ Show your popup immediately (don’t create a new one)
-    setShowSuccessPopup(true);
+  setLoading(true);
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        college: '',
+        year: '',
+        branch: '',
+        github: '',
+        linkedin: '',
+      });
 
-    const formPayload = new FormData();
-    for (const key in formData) {
-        formPayload.append(key, formData[key]);
+  try {
+    const res = await fetch("/api/send_email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      setShowSuccessPopup(true);
+    } else {
+      console.log("error occured")
     }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    
+  } finally {
+    setLoading(false);
+  }
+};
 
-    try {
-        await axios.post('https://my-backend-u5jv.onrender.com/register', formPayload, {
-            headers: { 'Content-Type': 'application/json' },
-        });
-    } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("❌ Something went wrong! Please try again."); 
-    }
-  };
 
 
   return (
-    <section className="bg-black text-white py-12 px-4  md:h-[100vh] w-[100vw] items-center md:px-20">
+    <section className="bg-black text-white py-12 px-4 md:h-[100vh] w-[100vw] items-center md:px-20">
       <div className="max-w-4xl mx-auto bg-[#0c0c0c] p-6 md:p-10 rounded-2xl shadow-lg border border-gray-700">
         <h2 className={`${orbitron.className} text-3xl md:text-4xl text-sky-400 mb-8 text-center`}>
           Mentorship Registration
@@ -93,24 +110,23 @@ const EventRegistrationForm = () => {
 
           <button
             onClick={handleSubmit}
-            disabled={loading} // ✅ Disable button while submitting
+            disabled={loading}
             className={`mt-8 w-full font-bold py-3 rounded-xl transition duration-300 
             ${loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
           >
-            {loading ? "Submitted" : "Submit Registration"} {/* ✅ Change text while loading */}
+            {loading ? "Submitting..." : "Submit Registration"}
           </button>
         </div>
       </div>
 
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
-            <h3 className="text-xl font-bold mb-4">
-              ✅ Registration Complete!</h3>
-            <p className="mb-6">We'll reach out via email with the next steps.</p>
+          <div className="bg-black text-white rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
+            <h3 className="text-xl font-bold mb-4">Registration Successful!</h3>
+            <p className="mb-6">Thank you for registering. We've sent you the event details via email.</p>
             <button
               onClick={() => setShowSuccessPopup(false)}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-gray-700"
             >
               Close
             </button>
