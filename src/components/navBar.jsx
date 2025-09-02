@@ -20,7 +20,7 @@ function NavBar() {
     { icon: <RxHome />, path: '/', label: 'Home' },
     { icon: <MdOutlineEmojiEvents />, path: '/events', label: 'Events' },
     { icon: <FaChalkboardTeacher />, path: '/mentors', label: 'Mentors' },
-    { icon: <FaUsers />, path: '/alumini', label: 'Alumni' },
+    { icon: <FaUsers />, path: '/alumni', label: 'Alumni' },
     { icon: <RiTeamLine />, path: '/team', label: 'Team' },
     { icon: <FaTools />, path: '/projects', label: 'Projects' },
     { icon: <FaRegEdit />, path: '/blogs', label: 'Blogs' },
