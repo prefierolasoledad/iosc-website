@@ -66,7 +66,7 @@ export default function EventBellNotification({
 
   return (
     <>
-      <div className={`fixed z-[9999] ${posClass} flex flex-col items-end`}>
+      <div className={`fixed z-[800] ${posClass} flex flex-col items-end`}>
         <button
           onClick={handleOpen}
           aria-label="Notifications"

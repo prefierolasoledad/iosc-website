@@ -11,8 +11,10 @@ const EventRegistrationForm = () => {
     email: '',
     phone: '',
     college: '',
+    branch:'',
+    team: '',
     year: '',
-    branch: '',
+    team:'',
     github: '',
     linkedin: '',
   });
@@ -58,7 +60,7 @@ const handleSubmit = async () => {
     if (result.success) {
       setShowSuccessPopup(true);
     } else {
-    console.log("error occured")
+      console.log("error occured")
     }
   } catch (error) {
     console.error("Error submitting form:", error);
@@ -74,22 +76,30 @@ const handleSubmit = async () => {
     <section className="bg-black text-white py-12 px-4 md:h-[100vh] w-[100vw] items-center md:px-20">
       <div className="max-w-4xl mx-auto bg-[#0c0c0c] p-6 md:p-10 rounded-2xl shadow-lg border border-gray-700">
         <h2 className={`${orbitron.className} text-3xl md:text-4xl text-sky-400 mb-8 text-center`}>
-          Event Registration
+          Mentorship Registration
         </h2>
 
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <input name="fullName" value={formData.fullName} onChange={handleChange} type="text" placeholder="Full Name" className="input" required />
-            <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Email" className="input" required />
+            <input name="email" value={formData.email} onChange={handleChange} type="text" placeholder="Gmail" className="input" required />
             <input name="phone" value={formData.phone} onChange={handleChange} type="text" placeholder="Phone Number" className="input" required />
-            <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Year" className="input" required />
+            <input name="year" value={formData.year} onChange={handleChange} type="text" placeholder="Graduation Year" className="input" required />
             <input name="branch" value={formData.branch} onChange={handleChange} type="text" placeholder="Branch" className="input" required />
             <select name="college" value={formData.college} onChange={handleChange} className="input bg-black border-white" required>
-              <option value="" className='text-black'>Select College</option>
+              <option value="" className='text-black'>Select School</option>
               <option value="USAR" className='text-black'>USAR</option>
               <option value="USAP" className='text-black'>USAP</option>
               <option value="USDI" className='text-black'>USDI</option>
               <option value="USMC" className='text-black'>USMC</option>
+            </select>
+            <select name="team" value={formData.team} onChange={handleChange} className="input bg-black border-white" required>
+              <option value="" className='text-black'>Select Team </option>
+              <option value="Team I3" className='text-black'>Team I3</option>
+              <option value="Team I5" className='text-black'>Team I5</option>
+              <option value="Team I7" className='text-black'>Team I7</option>
+              <option value="Team I9" className='text-black'>Team I9</option>
+              <option value="Team ARC" className='text-black'>Team ARC</option>
             </select>
           </div>
 

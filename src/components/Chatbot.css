@@ -4,7 +4,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 9999; /* Increased z-index */
+  z-index: 900; /* Increased z-index */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   pointer-events: none; /* Allow clicks to pass through container */
 }

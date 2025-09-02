@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/heroSecton";
 import NavBar from "@/components/navBar";
 import LoadingScreen from "@/components/loadingScreen";
-
+import EVENTPHOTO from "@/assets/events/dock-up.jpg";
 // Dynamically import Chatbot to prevent hydration issues
 const Chatbot = dynamic(() => import("../components/Chatbot"), {
   ssr: false,
@@ -45,11 +45,11 @@ export default function Home() {
   }
    const event = {
     id: "===",
-    title: "Event Registration",
+    title: "MENTORSHIP PROGRAM",
     description:
-      "Speaker session as well as club orientation",
-    date: "Aug 28, 2025 • Offline",
-    ctaUrl: "/eventRegistration",
+      "Mentorship program organised by IOSC EDC Club",
+    date: "Sept 08, 2025 • Offline",
+    ctaUrl: "/mentorshipRegistrations",
     // image: EVENTPHOTO,
     neverShowAgainDays: 30,
   };

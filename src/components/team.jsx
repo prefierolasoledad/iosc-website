@@ -1,9 +1,10 @@
-import React from 'react';
+"use client";
+import React, { useRef } from 'react'; // Add useRef import
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaChevronLeft, FaChevronRight } from "react-icons/fa6"; // Add navigation icons
 import './sprinkleAnimation.css';
 
 
@@ -24,6 +25,9 @@ import ARYANSACHAN from "@/assets/team/i3/Aryan Sachan.jpg";
 import KARANBHATT from "@/assets/team/i3/KARAN BHATT.jpg";
 import RAHULBHATIA from "@/assets/team/i3/Rahul Bhatia.jpeg";
 import MAYANKBISHT from '@/assets/team/i3/Mayank Bisht.jpg';
+import PAWANYADAV from '@/assets/team/i3/Pawan Yadav.jpg';
+import DHRUVSHARMA from '@/assets/team/i3/DHRUV SHARMA.jpg';
+import VASUTOHANGAR from "@/assets/team/i3/Vasu Tohangar.jpg";
 
 import AMOGHGUPTA from "@/assets/team/i5/Amogh Gupta.jpg";
 import MAYANKSHARMA from "@/assets/team/i5/Mayank_sharma.jpg";
@@ -32,8 +36,10 @@ import SAMARTHYADAV from "@/assets/team/i5/Samarth Yadav.jpg";
 import PRATHAMKUMAR from "@/assets/team/i5/Pratham Kumar.jpg";
 import UTSAVKUMAR from "@/assets/team/i5/Utsav Kumar.jpg";
 import WAQARAKHTAR from "@/assets/team/i5/Waqar Akhtar.jpeg";
+import MAHIYADAV from '@/assets/team/i5/Mahi yadav.jpg';
 
 import AKSHITSHARMA from '@/assets/team/i7/AKSHIT SHARMA.jpg';
+import MANANDEEPSINGHLAMBA from '@/assets/team/i7/MANANDEEP SINGH LAMBA.jpeg';
 
 import KHUSHITHAKUR from '@/assets/team/arc/Khushi_Thakur.jpg';
 import PARIDUDEJA from '@/assets/team/arc/Pari Dudeja.jpg';
@@ -49,9 +55,9 @@ import PARTHMAWAI from '@/assets/team/i9/Parth Mawai.jpg';
 import PIYUSHGUPTA from '@/assets/team/i9/PIYUSH GUPTA.jpg';
 import PRIYACHAURASIA from '@/assets/team/i9/Priya Chaurasia.jpg';
 import RICHIKDAS from '@/assets/team/i9/Richik Das.png';
+import AVISHCHOUDHARY from '@/assets/team/i9/Avish Choudhary.jpg';
 
 import YASHGUPTA from "@/assets/team/ultra/Yash Gupta.jpg";
-import VASUTOHANGAR from "@/assets/team/ultra/Vasu_Tohangar.jpg";
 import ARMAAN from "@/assets/team/ultra/Armaan.jpg";
 import DIPANSHUSAROVAR from "@/assets/team/ultra/Dipanshu Sarovar.jpg";
 
@@ -154,41 +160,41 @@ const Teams = () => {
         ["connector-left", "center-node-left", "white-box"],
         ["white-box", "center-node", "connector-right"],
         ["connector-left", "center-node-left", "white-box"],
-        ["white-box", "center-node", "connector-right"],
-        ["", "", "white-box"],
+        ["white-box", " ", " "],
+        //["", "", "white-box"],
     ];
 
     const leadsName = [
       {
-        Name: "PARTH AWASTHI",
+        Name: "UTKARSH CHAUHAN",
         Position: "Lead",
-        image: PARTHAWASTHI,
+        image: UTKARSHCHAUHAN,
         quote: "Leadership is not about a title or a designation. It’s about impact, influence, and inspiration.",
       },
       {
-        Name: "DIPTI SINGH",
+        Name: "YASH GUPTA",
         Position: "Co-Lead",
-        image: DIPTISINGH,
+        image: YASHGUPTA,
         quote: "The future belongs to those who believe in the beauty of their dreams.",
       },
       {
-        Name: "JAY TOMAR",
-        Position: "Technical Lead",
-        image: JAYTOMAR,
+        Name: "ARYAN SACHAN",
+        Position: "Tech Lead",
+        image: ARYANSACHAN,
         quote: "Don't watch the clock; do what it does. Keep going.",
       },
       {
-        Name: "AKSHAT SARASWAT",
-        Position: "Technical Co-Lead",
-        image: AKSHATSARASWAT,
+        Name: "KARAN BHATT",
+        Position: "Tech Co-Lead",
+        image: KARANBHATT,
         quote: "Success is the sum of small efforts, repeated day in and day out.",
       },
-      {
+      /*{
         Name: "ISHAN GUPTA",
         Position: "Technical Co-Lead",
         image: ISHANGUPTA,
         quote: "You were born to stand out, not blend in",
-      },
+      },*/
     ];
     
 
@@ -198,17 +204,17 @@ const Teams = () => {
           image: I3.src,
           Members: [
             {
-                "Name":"ARYAN SACHAN",
-                "Position":"Core Member",
-                image:ARYANSACHAN,
-                github:'https://github.com/AryanSachan12'
+                "Name":"VASU TOHANGAR", 
+                "Position":"Lead",
+                image: VASUTOHANGAR,
+                github:'https://github.com/Vasutohangar2005'
             },
-            {
+            /*{
                 "Name":"KARAN BHATT",
                 "Position":"Core Member",
                 image:KARANBHATT,
                 github:'https://github.com/prefierolasoledad'
-            },
+            },*/
             {
               "Name":"RAHUL BHATIA",
               "Position":"Core Member",
@@ -219,13 +225,41 @@ const Teams = () => {
               "Position":"Core Member",
               image:MAYANKBISHT,
               github:'https://github.com/mayankbisht-tech'
-            }
+            },
+            {
+                "Name":"PAWAN YADAV",
+                "Position":"Core Member",
+                image: PAWANYADAV,
+                github:'https://github.com/pawanydv35'
+            },
+            {
+                "Name":"DHRUV SHARMA",
+                "Position":"Core Member",
+                image: DHRUVSHARMA,
+                github:'https://github.com/mystic-06'
+            },
           ]
         },
         {
           title: "TEAM i5",
           image: I5.src,
           Members: [
+            {
+                "Name":"SAMARTH YADAV",
+                "Position":"Lead",
+                image:SAMARTHYADAV
+            },
+            {
+                "Name":"OCEAN BHATNAGAR",
+                "Position":"Co-Lead",
+                image:OCEANBHATNAGAR
+            },
+            {
+              "Name":"WAQAR AKHTAR",
+              "Position":"Core Member",
+              image:WAQARAKHTAR,
+              github:'https://github.com/Waqar080206'
+          },
             {
                 "Name":"AMOGH GUPTA",
                 "Position":"Core Member",
@@ -236,16 +270,8 @@ const Teams = () => {
                 "Position":"Core Member",
                 image:MAYANKSHARMA
             },
-            {
-                "Name":"OCEAN BHATNAGAR",
-                "Position":"Core Member",
-                image:OCEANBHATNAGAR
-            },
-            {
-                "Name":"SAMARTH YADAV",
-                "Position":"Core Member",
-                image:SAMARTHYADAV
-            },
+            
+            
             {
               "Name":"PRATHAM KUMAR",
               "Position":"Core Member",
@@ -259,10 +285,10 @@ const Teams = () => {
               github:'https://github.com/Utsav-Kumar19'
           },
           {
-              "Name":"WAQAR AKHTAR",
+              "Name":"MAHI YADAV",
               "Position":"Core Member",
-              image:WAQARAKHTAR,
-              github:'https://github.com/Waqar080206'
+              image:MAHIYADAV,
+              github:'https://github.com/MahiYadav99'
           },
           ]
         },
@@ -271,10 +297,17 @@ const Teams = () => {
             image: I7.src,
             Members: [
               {
-                  "Name":"AKSHIT SHARMA",
-                  "Position":"Core Member",
-                  image:AKSHITSHARMA
-              }
+                  "Name":"Manandeep Singh Lamba",
+                  "Position":"Lead",
+                  image:MANANDEEPSINGHLAMBA,
+                  github:'https://github.com/ManandeepSingh1196'
+              },
+              {
+                "Name":"PIYUSH GUPTA",
+                "Position":"Core Member",
+                image:PIYUSHGUPTA,
+                github:'https://github.com/Piyush-xo-19',
+            },
             ]
           },
           {
@@ -283,26 +316,22 @@ const Teams = () => {
             Members: [
               {
                 "Name":"KHUSHI THAKUR",
-                "Position":"Core Member",
+                "Position":"Lead",
                 image:KHUSHITHAKUR
               },
               {
-                "Name":"PARI DUDEJA",
-                "Position":"Core Member",
-                image:PARIDUDEJA,
-                github:'https://github.com/pari-dudeja2005'
-              },
-              {
-                  "Name":"KRITI RASTOGI",
-                  "Position":"Core Member",
-                  image:KRITIRASTOGI,
-                  github:'https://github.com/kritirastogi1501'
-              },
-              {
                 "Name":"ALISHA GODARA",
-                "Position":"Core Member",
+                "Position":"Co-Lead",
                 image:ALISHAGODARA
               },
+            
+              // {
+              //     "Name":"KRITI RASTOGI",
+              //     "Position":"Core Member",
+              //     image:KRITIRASTOGI,
+              //     github:'https://github.com/kritirastogi1501'
+              // },
+              
               {
               "Name":"SANCHIT NARANG",
               "Position":"Core Member",
@@ -315,10 +344,16 @@ const Teams = () => {
             image: I9.src,
             Members: [
               {
-                "Name":"UTKARSH CHAUHAN",
-                "Position":"Core Member",
-                image:UTKARSHCHAUHAN,
-                github:'https://github.com/utkarsh-chauhannn'
+                "Name":"PARI DUDEJA",
+                "Position":"Lead",
+                image:PARIDUDEJA,
+                github:'https://github.com/pari-dudeja2005'
+              },
+               {
+                  "Name":"PARTH MAWAI",
+                  "Position":"Co-Lead",
+                  image:PARTHMAWAI,
+                  github:'https://github.com/parthmawai'
               },
               {
                   "Name":"AKSHAT TALWAR",
@@ -338,12 +373,7 @@ const Teams = () => {
                 image:HARSHITNEGI,
                 github:'https://github.com/Harshit-Negi27'
               },
-              {
-                  "Name":"PARTH MAWAI",
-                  "Position":"Core Member",
-                  image:PARTHMAWAI,
-                  github:'https://github.com/parthmawai'
-              },
+             
               {
                 "Name":"PIYUSH GUPTA",
                 "Position":"Core Member",
@@ -362,13 +392,19 @@ const Teams = () => {
               image:RICHIKDAS,
               github:'https://github.com/Richik06'
             },
+            {
+              "Name":"AVISH CHOUDHARY",
+              "Position":"Core Member",
+              image:AVISHCHOUDHARY,
+              github:'https://github.com/choudhary-avish20'
+            },
             ]
           },
           {
             title: "TEAM ULTRA",
             image: ULTRA.src,
             Members: [
-                {
+                /*{
                     "Name":"YASH GUPTA",
                     "Position":"Core Member",
                     image:YASHGUPTA
@@ -377,7 +413,7 @@ const Teams = () => {
                     "Name":"VASU TOHANGAR",
                     "Position":"Core Member",
                     image:VASUTOHANGAR
-                },
+                },*/
                 {
                   "Name":"ARMAAN",
                   "Position":"Core Member",
@@ -429,36 +465,106 @@ const Teams = () => {
                 ))}
             </div>
             <div className="flex flex-col gap-10 items-center mt-10 w-full">
-                {events?.map((event, index) => (
-                    <div
-                    key={index}
-                    className="w-[85%] md:w-[80%] h-[500px] rounded-2xl bg-gray-400 flex overflow-x-auto items-center scrollbar-hide gap-7 px-4 py-6"
-                    >
-                    <div className="text-center rounded-2xl h-full min-w-[300px] sm:min-w-[380px] flex-grow text-4xl md:text-6xl font-extrabold text-white flex flex-col gap-20 justify-center items-center"
-                      style={{
-                        backgroundImage:`url(${event.image})`,
-                        backgroundSize:'contain',
-                        backgroundPosition:'center',
-                        backgroundRepeat:'no-repeat'
-                      }}
-                    
-                    >
-                        <h1 className='mt-10'>
-                          
-                        </h1>
-                          <div className='text-xl sm:hidden flex items-center'>
-                            Swipe <FaArrowRightLong className='ml-2'/>
-                          </div>
-                        
-                    </div>
+                {events?.map((event, index) => {
+                    // Check if slider is needed (teams with more than 3 members)
+                    const needsSlider = event.Members.length > 1;
+                    const sliderRef = useRef(null);
+                    const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+                    const [canScrollRight, setCanScrollRight] = React.useState(needsSlider);
 
-                    {event?.Members?.map((member, idx) => (
-                        <div key={idx} className='h-full w-[370px]'>
-                            <WhiteBox key={idx} data={member} isFillable={false}/>
+                    const checkScrollButtons = () => {
+                        if (sliderRef.current) {
+                            const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+                            setCanScrollLeft(scrollLeft > 0);
+                            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+                        }
+                    };
+
+                    const scrollLeftHandler = () => {
+                        sliderRef.current?.scrollBy({
+                            left: -400,
+                            behavior: 'smooth'
+                        });
+                        setTimeout(checkScrollButtons, 300);
+                    };
+
+                    const scrollRightHandler = () => {
+                        sliderRef.current?.scrollBy({
+                            left: 400,
+                            behavior: 'smooth'
+                        });
+                        setTimeout(checkScrollButtons, 300);
+                    };
+
+                    React.useEffect(() => {
+                        const slider = sliderRef.current;
+                        if (slider) {
+                            checkScrollButtons();
+                            slider.addEventListener('scroll', checkScrollButtons);
+                            return () => slider.removeEventListener('scroll', checkScrollButtons);
+                        }
+                    }, []);
+
+                    return (
+                        <div key={index} className="w-[85%] md:w-[80%] relative">
+                            {/* Left navigation button - only show when can scroll left */}
+                            {needsSlider && canScrollLeft && (
+                                <button 
+                                    onClick={scrollLeftHandler}
+                                    className="hidden md:flex absolute left-[-60px] top-1/2 transform -translate-y-1/2 z-10 
+                                             bg-gray-400 hover:bg-gray-500 text-white 
+                                             p-4 rounded-full shadow-2xl transition-all duration-300 
+                                             hover:scale-110"
+                                >
+                                    <FaChevronLeft size={18} />
+                                </button>
+                            )}
+                            
+                            {/* Right navigation button - only show when can scroll right */}
+                            {needsSlider && canScrollRight && (
+                                <button 
+                                    onClick={scrollRightHandler}
+                                    className="hidden md:flex absolute right-[-60px] top-1/2 transform -translate-y-1/2 z-10 
+                                             bg-gray-400 hover:bg-gray-500 text-white 
+                                             p-4 rounded-full shadow-2xl transition-all duration-300 
+                                             hover:scale-110"
+                                >
+                                    <FaChevronRight size={18} />
+                                </button>
+                            )}
+
+                            <div
+                                ref={sliderRef}
+                                className={`h-[500px] rounded-2xl bg-gray-400 flex items-center gap-7 px-6 py-6 
+                                          ${needsSlider ? 'overflow-x-auto scrollbar-hide scroll-smooth' : 'overflow-hidden'}`}
+                            >
+                                <div className="text-center rounded-2xl h-full min-w-[300px] sm:min-w-[380px] flex-shrink-0 
+                                              text-4xl md:text-6xl font-extrabold text-white flex flex-col gap-20 
+                                              justify-center items-center"
+                                    style={{
+                                        backgroundImage: `url(${event.image})`,
+                                        backgroundSize: 'contain',
+                                        backgroundPosition: 'center',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}
+                                >
+                                    <h1 className='mt-10'></h1>
+                                    {needsSlider && (
+                                        <div className='text-xl md:hidden flex items-center'>
+                                            Swipe <FaArrowRightLong className='ml-2'/>
+                                        </div>
+                                    )}
+                                </div>
+
+                                {event?.Members?.map((member, idx) => (
+                                    <div key={idx} className="h-full min-w-[370px] flex-shrink-0">
+                                        <WhiteBox data={member} isFillable={false}/>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </section>
     );
