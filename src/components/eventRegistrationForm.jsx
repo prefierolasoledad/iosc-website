@@ -49,7 +49,7 @@ const handleSubmit = async () => {
       });
 
   try {
-    const res = await fetch("/api/send_email", {
+    const res = await fetch("https://my-backend-u5jv.onrender.com/api/send_email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
