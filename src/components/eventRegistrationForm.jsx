@@ -36,37 +36,20 @@ const handleSubmit = async () => {
     return alert("Please enter a valid Gmail address.");
   }
 
-  setLoading(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        college: '',
-        year: '',
-        branch: '',
-        github: '',
-        linkedin: '',
-      });
+  if (!formData.fullName || !formData.college || !formData.team || !formData.phone || !formData.branch || !formData.year) {
+    return alert("Please fill out all required fields.");
+  }
 
+  setShowSuccessPopup(true);
   try {
-    const res = await fetch("https://my-backend-u5jv.onrender.com/api/send_email", {
+    await fetch("https://my-backend-u5jv.onrender.com/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
-    const result = await res.json();
-
-    if (result.success) {
-      setShowSuccessPopup(true);
-    } else {
-      console.log("error occured")
-    }
   } catch (error) {
     console.error("Error submitting form:", error);
     
-  } finally {
-    setLoading(false);
   }
 };
 
@@ -114,19 +97,19 @@ const handleSubmit = async () => {
             className={`mt-8 w-full font-bold py-3 rounded-xl transition duration-300 
             ${loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
           >
-            {loading ? "Submitting..." : "Submit Registration"}
+            {loading ? "Submitted" : "Submit Registration"}
           </button>
         </div>
       </div>
 
       {showSuccessPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-black text-white rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
-            <h3 className="text-xl font-bold mb-4">Registration Successful!</h3>
+        <div className="fixed inset-0 bg-black/30 bg-opacity-60 flex items-center justify-center z-50">
+          <div className="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl text-center">
+            <h3 className="text-xl font-bold text-blue-500 mb-4">Registration Successful!</h3>
             <p className="mb-6">Thank you for registering. We've sent you the event details via email.</p>
             <button
               onClick={() => setShowSuccessPopup(false)}
-              className="bg-slate-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Close
             </button>
