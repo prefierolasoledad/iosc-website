@@ -41,6 +41,7 @@ const handleSubmit = async () => {
   }
 
   setShowSuccessPopup(true);
+  setLoading(true);
   try {
     await fetch("https://my-backend-u5jv.onrender.com/register", {
       method: "POST",
