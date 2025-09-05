@@ -1,17 +1,5 @@
-'use client';
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
-
-import EVENTPHOTO from "@/assets/events/azientek.jpg";
-
-// Dynamically import EventNotification to avoid hydration issues
-const EventNotification = dynamic(() => import("@/components/EventNotification"), {
-  ssr: false,
-  loading: () => null
-});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,22 +11,66 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "IoSC-EDC",
+  description:
+    "The IoSC-EDC is the official Student Club at GGSIPU. We host tech events, hackathons, and workshops to foster innovation and help students become creators.",
+  keywords: [
+     "IoSC", "IoSC-EDC", "GGSIPU", "student club", "tech events",
+    "hackathons", "workshops", "entrepreneurship", "innovation", "coding", "IPU club",
+  ],
+  openGraph: {
+    title: "IoSC-EDC",
+    description:
+      "Join the top tech and entrepreneurship club at GGSIPU. Participate in hackathons, workshops, and speaker sessions to build your future. 🚀",
+    url: "https://www.iosc-edc.club", 
+    siteName: "IoSC-EDC",
+    images: [
+      {
+        url: "./favicon.ico", 
+        width: 1200,
+        height: 630,
+        alt: "The official logo and banner for IoSC-EDC at GGSIPU",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  icons: {
+    icon: [
+      { url: './favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: './favicon.ico', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: './favicon.ico',
+    apple: './favicon.ico',
+  },
+};
+
+
 export default function RootLayout({ children }) {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-
   return (
     <html lang="en">
       <head>
-        <title>IoSC-EDC</title>
-        <meta name="description" content="The IoSC-EDC is the official Student Club at GGSIPU. We host tech events, hackathons, and workshops to foster innovation and help students become job creators. Our mission is to provide a platform for students to gain hands-on experience, learn from industry experts, and develop the entrepreneurial mindset needed to succeed." />
-        <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "IOSC-EDC",
+              url: "https://www.iosc-edc.club",
+              logo: "./favicon.ico"
+            }),
+          }}
+        />
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
