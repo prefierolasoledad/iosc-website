@@ -17,7 +17,7 @@ const EventRegistrationForm = () => {
     year: '',
     github: '',
     linkedin: '',
-    topic: '',
+    interest: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -46,14 +46,14 @@ const EventRegistrationForm = () => {
       return alert('Please enter a valid email address.');
     }
 
-    if (!formData.fullName || !formData.college || !formData.phone || !formData.branch || !formData.year || !formData.topic) {
+    if (!formData.fullName || !formData.college || !formData.phone || !formData.branch || !formData.year || !formData.interest) {
       return alert('Please fill out all required fields.');
     }
 
     setLoading(true);
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+      const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8080';
       await axios.post(`${baseUrl}/register`, formData);
 
       setSubmitOk(true);
@@ -586,15 +586,9 @@ const EventRegistrationForm = () => {
               </div>
 
               <div className="field-group">
-                <label className="field-label">School <span>*</span></label>
-                <select name="college" value={formData.college} onChange={handleChange}
-                  className="input-field" required>
-                  <option value="">Select School</option>
-                  <option value="USAR">USAR</option>
-                  <option value="USAP">USAP</option>
-                  <option value="USDI">USDI</option>
-                  <option value="USMC">USMC</option>
-                </select>
+                <label className="field-label">College/School Name <span>*</span></label>
+                <input name="college" value={formData.college} onChange={handleChange}
+                  type="text" placeholder="e.g. USAR" className="input-field" required />
               </div>
 
               {/* <select name="team" value={formData.team} onChange={handleChange} className="input-field" required> */}
@@ -612,7 +606,7 @@ const EventRegistrationForm = () => {
             {/* Topic selection – full width */}
             <div className="field-group topic-wrapper">
               <label className="field-label">Topic of Interest <span>*</span></label>
-              <select name="topic" value={formData.topic} onChange={handleChange}
+              <select name="interest" value={formData.interest} onChange={handleChange}
                 className="input-field" required>
                 <option value="">Select a Topic</option>
 
