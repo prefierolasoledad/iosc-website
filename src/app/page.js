@@ -37,19 +37,19 @@ export default function Home() {
       setLoading(false);
     }
   }, []);
-  
+
 
   // Don't render anything until client-side hydration is complete
   if (!isClient) {
     return null;
   }
-   const event = {
+  const event = {
     id: "===",
-    title: "AI SESSION",
+    title: "IoSC EDC x CampusX",
     description:
-      "AI session organised by IOSC EDC Club",
-    date: "Feb 28, 2026 • Online • 5 PM",
-    ctaUrl: "/mentorshipRegistrations",
+      "A session with IoSC EDC x CampusX",
+    date: "April 4, 2026 • Online • 5 PM",
+    ctaUrl: "/eventRegistrationForm",
     // image: EVENTPHOTO,
     neverShowAgainDays: 30,
   };
@@ -59,8 +59,8 @@ export default function Home() {
       {loading && <LoadingScreen />}
       {!loading && (
         <>
-          {isClient && <EventNotification 
-            event={event} 
+          {isClient && <EventNotification
+            event={event}
             position="bottom-center" />
           }
           <NavBar />
